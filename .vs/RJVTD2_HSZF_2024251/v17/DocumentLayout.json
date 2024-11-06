@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4FAB6787-2EAA-4252-99E5-7555CDCD0593}|RJVTD2_HSZF_2024251.Test\\RJVTD2_HSZF_2024251.Test.csproj|c:\\users\\user\\source\\repos\\semester 3\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.test\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FAB6787-2EAA-4252-99E5-7555CDCD0593}|RJVTD2_HSZF_2024251.Test\\RJVTD2_HSZF_2024251.Test.csproj|solutionrelative:rjvtd2_hszf_2024251.test\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\user\\source\\repos\\semester 3\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.persistence.mssql\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:rjvtd2_hszf_2024251.persistence.mssql\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFE34195-BC5E-4DBB-92C1-223775882FA8}|RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj|c:\\users\\user\\source\\repos\\semester 3\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFE34195-BC5E-4DBB-92C1-223775882FA8}|RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj|solutionrelative:rjvtd2_hszf_2024251.model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34FD7AF-E105-432D-8DE6-3CF5DB554CE7}|RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj|c:\\users\\user\\source\\repos\\semester 3\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34FD7AF-E105-432D-8DE6-3CF5DB554CE7}|RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj|solutionrelative:rjvtd2_hszf_2024251.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B71C81-79C1-4077-8188-5BB632FBABD0}|RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj|c:\\users\\user\\source\\repos\\semester 3\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B71C81-79C1-4077-8188-5BB632FBABD0}|RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj|solutionrelative:rjvtd2_hszf_2024251.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 341,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Test\\Class1.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Test\\Class1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Test\\Class1.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Test\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:18:25.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\Class1.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Persistence.MsSql\\Class1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\Class1.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Persistence.MsSql\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:17:50.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\Class1.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Model\\Class1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\Class1.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Model\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:16:25.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\Class1.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T20:15:54.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\Program.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Console\\Program.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\Program.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Console\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T19:53:11.622Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
