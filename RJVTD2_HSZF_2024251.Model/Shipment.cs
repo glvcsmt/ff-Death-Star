@@ -35,7 +35,7 @@ public class Shipment   //Represents the detail information of a shipment
     public DateTime ShipmentDate { get; set; }  //The time of the shipment
     
     [Required]
-    public CargoCapacity CargoCapacity { get; set; }    //The cargo capacity of the ship
+    public virtual CargoCapacity CargoCapacity { get; set; }    //The cargo capacity of the ship
     
     [StringLength(100)]
     [Required]
@@ -46,8 +46,8 @@ public class Shipment   //Represents the detail information of a shipment
     public string ImperialPermitNumber { get; set; }    //The Imperial Permit Number of the shipment
     
     [Required]
-    public Crew Crew { get; set; }  //The crew of the ship
+    public virtual Crew Crew { get; set; }  //The crew of the ship
     
     [Required]
-    public ICollection<Cargo> Cargoes { get; set; } //The cargoes that make up the shipment 
+    public virtual ICollection<Cargo> Cargoes { get; set; } //The cargoes that make up the shipment 
 }

@@ -46,5 +46,5 @@ public class Cargo  //Represents the individual cargo items
     public string ShipmentId { get; set; } //Foreign key to Shipment
     
     [Required]
-    public Shipment Shipment { get; set; }  //Navigation property to Shipment
+    public virtual Shipment Shipment { get; set; }  //Navigation property to Shipment
 }

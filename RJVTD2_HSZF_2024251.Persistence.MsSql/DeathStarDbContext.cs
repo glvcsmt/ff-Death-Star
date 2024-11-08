@@ -13,20 +13,18 @@ public class DeathStarDbContext : DbContext //DbContext class that contains the 
     
     public DbSet<Cargo> Cargoes { get; set; }    //DbSet for the table that contains the Cargoes
 
+    //Constructor
     public DeathStarDbContext()
     {
         this.Database.EnsureCreated(); //This ensures that the database is created
     }
     
+    //Database configuration method
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        //Database connecting path
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=deathstardb;Integrated Security=True;MultipleActiveResultSets=true";
-        optionsBuilder.UseSqlServer(connStr);
+        optionsBuilder.UseSqlServer(connStr).UseLazyLoadingProxies();   //Enables Lazy Loading Proxies
         base.OnConfiguring(optionsBuilder);
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
     }
 }

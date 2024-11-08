@@ -31,5 +31,5 @@ public class Crew //Represents the crew of the ship
     public string ShipmentId { get; set; } //Foreign key to Shipment
     
     [Required]
-    public Shipment Shipment { get; set; }  //Navigation property to Shipment
+    public virtual Shipment Shipment { get; set; }  //Navigation property to Shipment
 }

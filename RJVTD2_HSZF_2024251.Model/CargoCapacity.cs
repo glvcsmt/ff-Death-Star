@@ -31,5 +31,5 @@ public class CargoCapacity  //Represents the cargo capacity of the ship
     public string ShipmentId { get; set; } //Foreign key to Shipment
     
     [Required]
-    public Shipment Shipment { get; set; }  //Navigation property to Shipment
+    public virtual Shipment Shipment { get; set; }  //Navigation property to Shipment
 }
