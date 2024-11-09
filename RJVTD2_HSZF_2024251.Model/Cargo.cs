@@ -7,14 +7,16 @@ public enum RiskLevel //Enum to limit RiskLevel to predefined values
 {
     Low = 0,
     Medium = 1,
-    High = 2
+    High = 2,
+    Critical = 3
 }
 
 public class Cargo  //Represents the individual cargo items 
 {
-    public Cargo(string cargoType, int imperialCredits, bool insurance, RiskLevel riskLevel, string shipmentId)
+    public Cargo(string cargoType, int quantity, int imperialCredits, bool insurance, RiskLevel riskLevel, string shipmentId)
     {
         CargoType = cargoType;
+        Quantity = quantity;
         ImperialCredits = imperialCredits;
         Insurance = insurance;
         RiskLevel = riskLevel;
@@ -33,6 +35,9 @@ public class Cargo  //Represents the individual cargo items
     [StringLength(50)]
     [Required]
     public string CargoType { get; set; }   //The name of the cargo type
+    
+    [Required]
+    public int Quantity { get; set; } //The quantity of the shipped cargo type
     
     [Required]
     public int ImperialCredits { get; set; }    //The value of the cargo in Imperial Credits

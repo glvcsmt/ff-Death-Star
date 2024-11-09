@@ -263,6 +263,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
