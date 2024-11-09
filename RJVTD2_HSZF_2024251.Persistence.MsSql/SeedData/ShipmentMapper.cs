@@ -1,6 +1,6 @@
 ﻿using RJVTD2_HSZF_2024251.Model;
 
-namespace RJVTD2_HSZF_2024251.Persistence.MsSql.SeedData.Class;
+namespace RJVTD2_HSZF_2024251.Persistence.MsSql.SeedData;
 
 //Class that converts the JSON oject to a Shipment object
 public class ShipmentMapper

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RJVTD2_HSZF_2024251.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af11d7427312ecc5a4c0bd55046c937a50c93ef4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04b9794ac48c4d521f2834305f0b58df1f0c83ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("RJVTD2_HSZF_2024251.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RJVTD2_HSZF_2024251.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
