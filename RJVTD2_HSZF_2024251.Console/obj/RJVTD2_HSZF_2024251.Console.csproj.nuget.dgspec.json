@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj": {}
+    "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj": {
+    "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj",
         "projectName": "RJVTD2_HSZF_2024251.Application",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,18 +22,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
               },
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj"
               }
             }
           }
@@ -72,17 +71,17 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj": {
+    "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj",
         "projectName": "RJVTD2_HSZF_2024251.Console",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,21 +89,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Application\\RJVTD2_HSZF_2024251.Application.csproj"
               },
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
               },
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj"
               }
             }
           }
@@ -143,17 +141,17 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
+    "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
         "projectName": "RJVTD2_HSZF_2024251.Model",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -161,7 +159,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -204,17 +201,17 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
+    "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj",
         "projectName": "RJVTD2_HSZF_2024251.Persistence.MsSql",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Persistence.MsSql\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -222,15 +219,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
+              "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj"
               }
             }
           }
@@ -249,6 +245,30 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

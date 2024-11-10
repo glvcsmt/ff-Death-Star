@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\RJVTD2_HSZF_2024251\\",
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40B71C81-79C1-4077-8188-5BB632FBABD0}|RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj|c:\\users\\user\\source\\repos\\rjvtd2_hszf_2024251\\rjvtd2_hszf_2024251.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40B71C81-79C1-4077-8188-5BB632FBABD0}|RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj|c:\\users\\lenovo\\source\\repos\\ff-death-star\\rjvtd2_hszf_2024251.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40B71C81-79C1-4077-8188-5BB632FBABD0}|RJVTD2_HSZF_2024251.Console\\RJVTD2_HSZF_2024251.Console.csproj|solutionrelative:rjvtd2_hszf_2024251.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\lenovo\\source\\repos\\ff-death-star\\rjvtd2_hszf_2024251.persistence.mssql\\seeddata\\class\\deathstardbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:rjvtd2_hszf_2024251.persistence.mssql\\seeddata\\class\\deathstardbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\lenovo\\source\\repos\\ff-death-star\\rjvtd2_hszf_2024251.persistence.mssql\\seeddata\\class\\shipmentdataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F599A7B8-F703-404B-9323-8EED3C3C0CFB}|RJVTD2_HSZF_2024251.Persistence.MsSql\\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:rjvtd2_hszf_2024251.persistence.mssql\\seeddata\\class\\shipmentdataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +22,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 341,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeathStarDbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\DeathStarDbSeeder.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\DeathStarDbSeeder.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\DeathStarDbSeeder.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\DeathStarDbSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T22:47:58.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShipmentDataLoader.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\ShipmentDataLoader.cs",
+              "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\ShipmentDataLoader.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\ShipmentDataLoader.cs",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Persistence.MsSql\\SeedData\\Class\\ShipmentDataLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T21:26:34.773Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\Program.cs",
               "RelativeDocumentMoniker": "RJVTD2_HSZF_2024251.Console\\Program.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Console\\Program.cs",
-              "RelativeToolTip": "RJVTD2_HSZF_2024251.Console\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Console\\Program.cs*",
+              "RelativeToolTip": "RJVTD2_HSZF_2024251.Console\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T19:53:11.622Z",
               "EditorCaption": ""
