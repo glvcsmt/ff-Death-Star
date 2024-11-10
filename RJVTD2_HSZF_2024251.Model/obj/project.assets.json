@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
       "projectName": "RJVTD2_HSZF_2024251.Model",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\ff-Death-Star\\RJVTD2_HSZF_2024251.Model\\obj\\",
+      "projectPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\RJVTD2_HSZF_2024251.Model.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +28,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

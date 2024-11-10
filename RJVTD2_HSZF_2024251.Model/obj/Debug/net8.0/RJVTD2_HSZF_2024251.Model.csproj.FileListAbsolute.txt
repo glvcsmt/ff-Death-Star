@@ -10,3 +10,15 @@ C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Model\obj\Debug\n
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\refint\RJVTD2_HSZF_2024251.Model.dll
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.pdb
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\ref\RJVTD2_HSZF_2024251.Model.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Model.deps.json
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Model.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Model.pdb
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.AssemblyInfo.cs
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.sourcelink.json
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\refint\RJVTD2_HSZF_2024251.Model.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Model.pdb
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Model\obj\Debug\net8.0\ref\RJVTD2_HSZF_2024251.Model.dll

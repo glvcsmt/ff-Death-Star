@@ -22,7 +22,7 @@ public class DeathStarDbContext : DbContext //DbContext class that contains the 
     //Database configuration method
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //Database connecting path
+        //Database connecting path which contains the path on which the program can connect to the database 
         string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=deathstardb;Integrated Security=True;MultipleActiveResultSets=true";
         optionsBuilder.UseSqlServer(connStr).UseLazyLoadingProxies();   //Enables Lazy Loading Proxies
         base.OnConfiguring(optionsBuilder);

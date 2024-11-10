@@ -11,7 +11,7 @@ public enum RiskLevel //Enum to limit RiskLevel to predefined values
     Critical = 3
 }
 
-public class Cargo  //Represents the individual cargo items 
+public class Cargo  //Represents an individual cargo items 
 {
     public Cargo(string cargoType, int quantity, int imperialCredits, bool insurance, RiskLevel riskLevel, string shipmentId)
     {
