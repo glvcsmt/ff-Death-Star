@@ -13,10 +13,4 @@
     <ProjectReference Include="..\RJVTD2_HSZF_2024251.Persistence.MsSql\RJVTD2_HSZF_2024251.Persistence.MsSql.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="ShipmentsBaseData.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

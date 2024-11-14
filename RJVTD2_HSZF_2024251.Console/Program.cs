@@ -8,7 +8,6 @@ namespace RJVTD2_HSZF_2024251.Console
         static void Main(string[] args)
         {
             var context = new DeathStarDbContext();
-            var repo = new DeathStarDbSeeder(context, "ShipmentsBaseData.json");
         }
     }
 }

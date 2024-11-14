@@ -82,7 +82,6 @@ C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Console\obj\Debug
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Console\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Console.genruntimeconfig.cache
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Console\obj\Debug\net8.0\ref\RJVTD2_HSZF_2024251.Console.dll
 C:\Users\LENOVO\source\repos\ff-Death-Star\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\ShipmentsBaseData.json
-C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\ShipmentsBaseData.json
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Console.exe
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Console.deps.json
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Console.runtimeconfig.json
