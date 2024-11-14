@@ -2,44 +2,58 @@
 
 namespace RJVTD2_HSZF_2024251.Persistence.MsSql.DataProviders;
 
+
+// Interface defining operations for managing Shipment entities in the database
 public interface IShipmentDataProvider
 {
+    // Retrieves a Shipment entity by its ID
     Shipment GetShipmentById(int shipmentId);
     
+    // Creates a new Shipment entity in the database
     void CreateShipment(Shipment shipment);
     
+    // Returns all Shipment entities from the database
     IEnumerable<Shipment> ReadAllShipments();
     
+    // Updates an existing Shipment entity in the database
     void UpdateCargo(Shipment shipment);
     
+    // Deletes a Shipment entity by its ID
     void DeleteShipment(int shipmentId);
 }
 
+// Class implementation for the IShipmentDataProvider interface
+// Uses DeathStarDbContext for database operations on Shipment entities
 public class ShipmentDataProvider : IShipmentDataProvider
 {
     private readonly DeathStarDbContext _context;
 
+    // Constructor that accepts a DbContext for dependency injection
     public ShipmentDataProvider(DeathStarDbContext context)
     {
         this._context = context;
     }
     
+    // Retrieves a Shipment entity by its ID
     public Shipment GetShipmentById(int shipmentId)
     {
         return _context.Shipments.FirstOrDefault(t => t.Id.Equals(shipmentId));
     }
 
+    // Creates and saves a new Shipment entity in the database
     public void CreateShipment(Shipment shipment)
     {
         _context.Shipments.Add(shipment);
         _context.SaveChanges();
     }
 
+    // Retrieves and returns all Shipment entities
     public IEnumerable<Shipment> ReadAllShipments()
     {
         return _context.Shipments;
     }
 
+    // Updates an existing Shipment entity's properties in the database
     public void UpdateCargo(Shipment shipment)
     {
         
@@ -59,6 +73,7 @@ public class ShipmentDataProvider : IShipmentDataProvider
         _context.SaveChanges();
     }
 
+    // Deletes a Shipment entity by its ID, if it exists in the database
     public void DeleteShipment(int shipmentId)
     {
         Shipment shipmentToDelete = _context.Shipments.FirstOrDefault(t => t.Id.Equals(shipmentId));
