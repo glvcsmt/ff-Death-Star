@@ -38,8 +38,7 @@ public class DirectoryProvider : IDirectoryProvider
         }
         else
         {
-            Console.WriteLine($"Directory not found: {Path.Combine(_basePath, directoryName)}");
-            return new List<FileSystemInfo>();
+            throw new DirectoryNotFoundException();
         } 
     }
 

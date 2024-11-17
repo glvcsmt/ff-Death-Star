@@ -1,6 +1,6 @@
 ﻿using RJVTD2_HSZF_2024251.Model;
 
-namespace RJVTD2_HSZF_2024251.Persistence.MsSql.DataProviders;
+namespace RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 
 
 // Interface defining operations for managing Shipment entities in the database

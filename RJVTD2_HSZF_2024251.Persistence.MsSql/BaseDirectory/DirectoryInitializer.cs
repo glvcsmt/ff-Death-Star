@@ -1,5 +1,4 @@
 ﻿using RJVTD2_HSZF_2024251.Model;
-using RJVTD2_HSZF_2024251.Persistence.MsSql.DataProviders;
 using RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 
 namespace RJVTD2_HSZF_2024251.Persistence.MsSql.BaseDirectory;
