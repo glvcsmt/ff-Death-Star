@@ -1,12 +1,11 @@
 ﻿using RJVTD2_HSZF_2024251.Model;
 using RJVTD2_HSZF_2024251.Persistence.MsSql.DataProviders;
+using RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 
 namespace RJVTD2_HSZF_2024251.Persistence.MsSql.BaseDirectory;
 
 public class DirectoryInitializer
 {
-    private string baseDirPath = "../../../../Shipments";
-    
     ShipmentDataProvider _shipmentDataProvider;
     
     public DirectoryInitializer(DeathStarDbContext context)
@@ -17,13 +16,13 @@ public class DirectoryInitializer
     
     private void BaseDirInitializer()
     {
-        Directory.CreateDirectory(baseDirPath);
+        DirectoryProvider directoryProvider = new DirectoryProvider();
 
         List<Shipment> shipments = _shipmentDataProvider.ReadAllShipments().ToList();
 
         foreach (Shipment ship in shipments)
         {
-            Directory.CreateDirectory(Path.Combine(baseDirPath, ship.ImperialPermitNumber));
+            if (ship.ImperialPermitNumber != null) directoryProvider.CreateDirectory(ship.ImperialPermitNumber);
         }
     }
 }
