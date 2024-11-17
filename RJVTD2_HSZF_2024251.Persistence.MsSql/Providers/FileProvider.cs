@@ -2,13 +2,13 @@
 
 public interface IFileProvider
 {
-    public bool WriteToFile<T>(List<T> content);
+    public bool WriteToFile<T>(string fileName, List<T> content);
     
-    public bool WriteToFile(string content);
+    public bool WriteToFile(string fileName, string content);
     
-    public string ReadFromFile();
+    public string[] ReadFromFile(string fileName);
     
-    public bool DeleteFile();
+    public bool DeleteFile(string fileName);
 }
 
 //string fileName = Path.GetFileName(filePath);
@@ -16,16 +16,11 @@ public class FileProvider : IFileProvider
 {
     private string _basePath = "../../../../Shipments";
     
-    public FileProvider(string fileName)
-    {
-        _basePath = Path.Combine(_basePath, fileName);
-    }
-    
-    public bool WriteToFile<T>(List<T> content)
+    public bool WriteToFile<T>(string fileName, List<T> content)
     {
         try
         {
-            StreamWriter sw = new StreamWriter(_basePath);
+            StreamWriter sw = new StreamWriter(Path.Combine(_basePath, fileName));
             for (int i = 0; i < content.Count; i++)
             {
                 sw.WriteLine(content[i]?.ToString());
@@ -41,11 +36,11 @@ public class FileProvider : IFileProvider
         
     }
 
-    public bool WriteToFile(string content)
+    public bool WriteToFile(string fileName, string content)
     {
         try
         {
-            File.WriteAllText(_basePath, content);
+            File.WriteAllText(Path.Combine(_basePath, fileName), content);
             return true;
         }
         catch (Exception ex)
@@ -55,16 +50,16 @@ public class FileProvider : IFileProvider
         }
     }
 
-    public string ReadFromFile()
+    public string[] ReadFromFile(string fileName)
     {
-        return File.ReadAllText(_basePath);
+        return File.ReadAllLines(Path.Combine(_basePath, fileName));
     }
 
-    public bool DeleteFile()
+    public bool DeleteFile(string fileName)
     {
         try
         {
-            File.Delete(_basePath);
+            File.Delete(Path.Combine(_basePath, fileName));
             return true;
         }
         catch (Exception ex)

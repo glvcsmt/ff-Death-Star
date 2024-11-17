@@ -2,56 +2,52 @@
 
 public interface IDirectoryProvider
 {
-    public bool EnsureDirectoryExists();
+    public bool EnsureDirectoryExists(string directoryName);
     
-    public bool CreateDirectory();
+    public bool CreateDirectory(string directoryName);
     
-    public IEnumerable<FileSystemInfo> ReadDirectoryContent();
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent(string directoryName);
     
-    public bool DeleteDirectory();
+    public bool DeleteDirectory(string directoryName);
 }
 
 public class DirectoryProvider : IDirectoryProvider
 {
     private string _basePath = "../../../../Shipments";
     
-    public DirectoryProvider(string directoryName)
+    public bool EnsureDirectoryExists(string directoryName)
     {
-        _basePath = Path.Combine(_basePath, directoryName);
-    }
-    public bool EnsureDirectoryExists()
-    {
-        return Directory.Exists(_basePath);
+        return Directory.Exists(Path.Combine(_basePath, directoryName));
     }
 
-    public bool CreateDirectory()
+    public bool CreateDirectory(string directoryName)
     {
-        if (!EnsureDirectoryExists())
+        if (!EnsureDirectoryExists(Path.Combine(_basePath, directoryName)))
         {
-            Directory.CreateDirectory(_basePath);
+            Directory.CreateDirectory(Path.Combine(_basePath, directoryName));
             return true;
         }
         else return false;
     }
 
-    public IEnumerable<FileSystemInfo> ReadDirectoryContent()
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent(string directoryName)
     {
-        if (EnsureDirectoryExists())
+        if (EnsureDirectoryExists(Path.Combine(_basePath, directoryName)))
         {
-            return new DirectoryInfo(_basePath).GetFileSystemInfos();
+            return new DirectoryInfo(Path.Combine(_basePath, directoryName)).GetFileSystemInfos();
         }
         else
         {
-            Console.WriteLine($"Directory not found: {_basePath}");
+            Console.WriteLine($"Directory not found: {Path.Combine(_basePath, directoryName)}");
             return new List<FileSystemInfo>();
         } 
     }
 
-    public bool DeleteDirectory()
+    public bool DeleteDirectory(string directoryName)
     {
-        if (EnsureDirectoryExists())
+        if (EnsureDirectoryExists(Path.Combine(_basePath, directoryName)))
         {
-            Directory.Delete(_basePath, true);
+            Directory.Delete(Path.Combine(_basePath, directoryName), true);
             return true;
         }
         else return false;

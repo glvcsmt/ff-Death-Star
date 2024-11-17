@@ -4,41 +4,34 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 
 public interface IFileService
 {
-    public bool WrinteToFile<T>(List<T> content);
+    public bool WrinteToFile<T>(string fileName, List<T> content);
     
-    public bool WriteToFile(string content);
+    public bool WriteToFile(string fileName, string content);
     
-    public string ReadFromFile();
+    public string[] ReadFromFile(string fileName);
     
-    public bool DeleteFile();
+    public bool DeleteFile(string fileName);
 }
 
 public class FileService : IFileService
 {
-    private FileProvider _fileProvider;
-
-    public FileService(string fileName)
+    public bool WrinteToFile<T>(string fileName, List<T> content)
     {
-        _fileProvider = new FileProvider(fileName);
-    }
-    
-    public bool WrinteToFile<T>(List<T> content)
-    {
-        return _fileProvider.WriteToFile(content);
+        return new FileProvider().WriteToFile(fileName, content);
     }
 
-    public bool WriteToFile(string content)
+    public bool WriteToFile(string fileName, string content)
     {
-        return _fileProvider.WriteToFile(content);
+        return new FileProvider().WriteToFile(fileName, content);
     }
 
-    public string ReadFromFile()
+    public string[] ReadFromFile(string fileName)
     {
-        return _fileProvider.ReadFromFile();
+        return new FileProvider().ReadFromFile(fileName);
     }
 
-    public bool DeleteFile()
+    public bool DeleteFile(string fileName)
     {
-        return _fileProvider.DeleteFile();
+        return new FileProvider().DeleteFile(fileName);
     }
 }

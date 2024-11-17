@@ -4,41 +4,34 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 
 public interface IDirectoryService
 {
-    public bool EnsureDirectoryExists();
+    public bool EnsureDirectoryExists(string directoryName);
     
-    public bool CreateDirectory();
+    public bool CreateDirectory(string directoryName);
     
-    public IEnumerable<FileSystemInfo> ReadDirectoryContent();
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent(string directoryName);
     
-    public bool DeleteDirectory();
+    public bool DeleteDirectory(string directoryName);
 }
 
 public class DirectoryService : IDirectoryService
 {
-    private DirectoryProvider _directoryProvider;
-
-    public DirectoryService(string directoryName)
+    public bool EnsureDirectoryExists(string directoryName)
     {
-        _directoryProvider = new DirectoryProvider(directoryName);
-    }
-    
-    public bool EnsureDirectoryExists()
-    {
-        return _directoryProvider.EnsureDirectoryExists();
+        return new DirectoryProvider().EnsureDirectoryExists(directoryName);
     }
 
-    public bool CreateDirectory()
+    public bool CreateDirectory(string directoryName)
     {
-        return _directoryProvider.CreateDirectory();
+        return new DirectoryProvider().CreateDirectory(directoryName);
     }
 
-    public IEnumerable<FileSystemInfo> ReadDirectoryContent()
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent(string directoryName)
     {
-        return _directoryProvider.ReadDirectoryContent();
+        return new DirectoryProvider().ReadDirectoryContent(directoryName);
     }
 
-    public bool DeleteDirectory()
+    public bool DeleteDirectory(string directoryName)
     {
-        return _directoryProvider.DeleteDirectory();
+        return new DirectoryProvider().DeleteDirectory(directoryName);
     }
 }
