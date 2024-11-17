@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RJVTD2_HSZF_2024251.Model;
+using RJVTD2_HSZF_2024251.Persistence.MsSql.BaseDirectory;
 using RJVTD2_HSZF_2024251.Persistence.MsSql.SeedData;
 
 namespace RJVTD2_HSZF_2024251.Persistence.MsSql;
@@ -19,6 +20,7 @@ public class DeathStarDbContext : DbContext //DbContext class that contains the 
     {
         this.Database.EnsureCreated(); //This ensures that the database is created
         DeathStarDbSeeder seed = new DeathStarDbSeeder(this, @"../../../../RJVTD2_HSZF_2024251.Persistence.MsSql/SeedData/ShipmentsBaseData.json");
+        DirectoryInitializer initialize = new DirectoryInitializer(this);
     }
     
     //Database configuration method
