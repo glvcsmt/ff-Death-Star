@@ -6,7 +6,7 @@ public interface IDirectoryProvider
     
     public bool CreateDirectory();
     
-    public IEnumerable<FileSystemInfo> ReadAllDirectoryContent();
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent();
     
     public bool DeleteDirectory();
 }
@@ -14,10 +14,10 @@ public interface IDirectoryProvider
 public class DirectoryProvider : IDirectoryProvider
 {
     private string _basePath = "../../../../Shipments";
-
-    public DirectoryProvider(string directory)
+    
+    public DirectoryProvider(string directoryName)
     {
-        _basePath = Path.Combine(_basePath, directory);
+        _basePath = Path.Combine(_basePath, directoryName);
     }
     public bool EnsureDirectoryExists()
     {
@@ -34,7 +34,7 @@ public class DirectoryProvider : IDirectoryProvider
         else return false;
     }
 
-    public IEnumerable<FileSystemInfo> ReadAllDirectoryContent()
+    public IEnumerable<FileSystemInfo> ReadDirectoryContent()
     {
         if (EnsureDirectoryExists())
         {
@@ -49,6 +49,11 @@ public class DirectoryProvider : IDirectoryProvider
 
     public bool DeleteDirectory()
     {
-        throw new NotImplementedException();
+        if (EnsureDirectoryExists())
+        {
+            Directory.Delete(_basePath, true);
+            return true;
+        }
+        else return false;
     }
 }

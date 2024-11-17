@@ -1,5 +1,4 @@
 ﻿using RJVTD2_HSZF_2024251.Persistence.MsSql;
-using RJVTD2_HSZF_2024251.Persistence.MsSql.DIrectory;
 
 
 namespace RJVTD2_HSZF_2024251.Console
