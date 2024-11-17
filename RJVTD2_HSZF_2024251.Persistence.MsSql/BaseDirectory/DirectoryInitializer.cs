@@ -10,7 +10,7 @@ public class DirectoryInitializer
     
     public DirectoryInitializer(DeathStarDbContext context)
     {
-        this._shipmentDataProvider = new ShipmentDataProvider(context);
+        _shipmentDataProvider = new ShipmentDataProvider(context);
         BaseDirInitializer();
     }
     
@@ -20,9 +20,9 @@ public class DirectoryInitializer
 
         List<Shipment> shipments = _shipmentDataProvider.ReadAllShipments().ToList();
 
-        foreach (Shipment ship in shipments)
+        foreach (Shipment shipment in shipments)
         {
-            if (ship.ImperialPermitNumber != null) directoryProvider.CreateDirectory(ship.ImperialPermitNumber);
+            if (shipment.ImperialPermitNumber != null) directoryProvider.CreateDirectory(shipment.ImperialPermitNumber);
         }
     }
 }
