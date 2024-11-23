@@ -7,7 +7,7 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 public interface ICargoCapacityService
 {
     // Retrieves a CargoCapacity by its ID
-    CargoCapacity GetCargoCapacityById(int cargoCapacityId);
+    CargoCapacity GetCargoCapacityById(string cargoCapacityId);
     
     // Creates a new CargoCapacity
     void CreateCargoCapacity(CargoCapacity cargoCapacity);
@@ -19,7 +19,7 @@ public interface ICargoCapacityService
     void UpdateCargoCapacity(CargoCapacity cargoCapacity);
     
     // Deletes a CargoCapacity by its ID
-    void DeleteCargoCapacity(int cargoCapacityId);
+    void DeleteCargoCapacity(string cargoCapacityId);
 }
 
 // Implementation of the ICargoCapacityService interface
@@ -35,7 +35,7 @@ public class CargoCapacityService : ICargoCapacityDataProvider
     }
     
     // Retrieves a CargoCapacity by its ID
-    public CargoCapacity GetCargoCapacityById(int cargoCapacityId)
+    public CargoCapacity GetCargoCapacityById(string cargoCapacityId)
     {
         return _cargoCapacityDataProvider.GetCargoCapacityById(cargoCapacityId);
     }
@@ -59,7 +59,7 @@ public class CargoCapacityService : ICargoCapacityDataProvider
     }
 
     // Deletes a CargoCapacity by its ID
-    public void DeleteCargoCapacity(int cargoCapacityId)
+    public void DeleteCargoCapacity(string cargoCapacityId)
     {
         _cargoCapacityDataProvider.DeleteCargoCapacity(cargoCapacityId);
     }

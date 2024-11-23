@@ -7,7 +7,7 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 public interface IShipmentService
 {
     // Retrieves a Shipment entity by its ID
-    Shipment GetShipmentById(int shipmentId);
+    Shipment GetShipmentById(string shipmentId);
     
     // Creates a new Shipment entity
     void CreateShipment(Shipment shipment);
@@ -19,7 +19,7 @@ public interface IShipmentService
     void UpdateCargo(Shipment shipment);
     
     // Deletes a Shipment entity by its ID
-    void DeleteShipment(int shipmentId);
+    void DeleteShipment(string shipmentId);
 }
 
 // Implementation of the IShipmentService interface
@@ -35,7 +35,7 @@ public class ShipmentService : IShipmentService
     }
 
     // Retrieves a Shipment entity by its ID
-    public Shipment GetShipmentById(int shipmentId)
+    public Shipment GetShipmentById(string shipmentId)
     {
         return _shipmentDataProvider.GetShipmentById(shipmentId);
     }
@@ -59,7 +59,7 @@ public class ShipmentService : IShipmentService
     }
 
     // Deletes a Shipment entity by its ID
-    public void DeleteShipment(int shipmentId)
+    public void DeleteShipment(string shipmentId)
     {
         _shipmentDataProvider.DeleteShipment(shipmentId);
     }

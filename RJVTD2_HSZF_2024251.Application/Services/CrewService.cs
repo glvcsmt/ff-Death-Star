@@ -7,7 +7,7 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 public interface ICrewService
 {
     // Retrieves a Crew entity by its ID
-    Crew GetCrewById(int crewId);
+    Crew GetCrewById(string crewId);
     
     // Creates a new Crew entity
     void CreateCrew(Crew crew);
@@ -19,7 +19,7 @@ public interface ICrewService
     void UpdateCrew(Crew crew);
     
     // Deletes a Crew entity by its ID
-    void DeleteCrew(int crewId);
+    void DeleteCrew(string crewId);
 }
 
 // Implementation of the ICrewService interface
@@ -31,11 +31,11 @@ public class CrewService : ICrewService
     // Constructor accepting an ICrewDataProvider instance for dependency injection
     public CrewService(ICrewDataProvider crewDataProvider)
     {
-        this._crewDataProvider = crewDataProvider;
+        _crewDataProvider = crewDataProvider;
     }
 
     // Retrieves a Crew entity by its ID
-    public Crew GetCrewById(int crewId)
+    public Crew GetCrewById(string crewId)
     {
         return _crewDataProvider.GetCrewById(crewId);
     }
@@ -59,7 +59,7 @@ public class CrewService : ICrewService
     }
 
     // Deletes a Crew entity by its ID
-    public void DeleteCrew(int crewId)
+    public void DeleteCrew(string crewId)
     {
         _crewDataProvider.DeleteCrew(crewId);
     }

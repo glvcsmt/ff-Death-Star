@@ -7,7 +7,7 @@ namespace RJVTD2_HSZF_2024251.Application.Services;
 public interface ICargoService
 {
     // Retrieves a Cargo by its ID
-    Cargo GetCargoById(int cargoId);
+    Cargo GetCargoById(string cargoId);
     
     // Creates a new Cargo
     void CreateCargo(Cargo cargo);
@@ -19,7 +19,7 @@ public interface ICargoService
     void UpdateCargo(Cargo cargo);
     
     // Deletes a Cargo by its ID
-    void DeleteCargo(int cargoId);
+    void DeleteCargo(string cargoId);
 }
 
 // Implementation of the ICargoService interface
@@ -35,7 +35,7 @@ public class CargoService : ICargoService
     }
     
     // Retrieves a Cargo by its ID
-    public Cargo GetCargoById(int cargoId)
+    public Cargo GetCargoById(string cargoId)
     {
         return _cargoDataProvider.GetCargoById(cargoId);
     }
@@ -59,7 +59,7 @@ public class CargoService : ICargoService
     }
 
     // Deletes a Cargo by its ID
-    public void DeleteCargo(int cargoId)
+    public void DeleteCargo(string cargoId)
     {
         _cargoDataProvider.DeleteCargo(cargoId);
     }

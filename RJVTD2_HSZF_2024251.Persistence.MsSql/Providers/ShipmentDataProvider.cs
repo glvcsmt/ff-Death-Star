@@ -7,7 +7,7 @@ namespace RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 public interface IShipmentDataProvider
 {
     // Retrieves a Shipment entity by its ID
-    Shipment GetShipmentById(int shipmentId);
+    Shipment GetShipmentById(string shipmentId);
     
     // Creates a new Shipment entity in the database
     void CreateShipment(Shipment shipment);
@@ -19,7 +19,7 @@ public interface IShipmentDataProvider
     void UpdateCargo(Shipment shipment);
     
     // Deletes a Shipment entity by its ID
-    void DeleteShipment(int shipmentId);
+    void DeleteShipment(string shipmentId);
 }
 
 // Class implementation for the IShipmentDataProvider interface
@@ -35,7 +35,7 @@ public class ShipmentDataProvider : IShipmentDataProvider
     }
     
     // Retrieves a Shipment entity by its ID
-    public Shipment GetShipmentById(int shipmentId)
+    public Shipment GetShipmentById(string shipmentId)
     {
         return _context.Shipments.FirstOrDefault(t => t.Id.Equals(shipmentId));
     }
@@ -74,7 +74,7 @@ public class ShipmentDataProvider : IShipmentDataProvider
     }
 
     // Deletes a Shipment entity by its ID, if it exists in the database
-    public void DeleteShipment(int shipmentId)
+    public void DeleteShipment(string shipmentId)
     {
         Shipment shipmentToDelete = _context.Shipments.FirstOrDefault(t => t.Id.Equals(shipmentId));
         if (shipmentToDelete != null) _context.Shipments.Remove(shipmentToDelete);

@@ -6,7 +6,7 @@ namespace RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 public interface ICargoCapacityDataProvider
 {
     // Retrieves a CargoCapacity entity by its ID
-    CargoCapacity GetCargoCapacityById(int cargoCapacityId);
+    CargoCapacity GetCargoCapacityById(string cargoCapacityId);
     
     // Creates a new CargoCapacity entity in the database
     void CreateCargoCapacity(CargoCapacity cargoCapacity);
@@ -18,7 +18,7 @@ public interface ICargoCapacityDataProvider
     void UpdateCargoCapacity(CargoCapacity cargoCapacity);
     
     // Deletes a CargoCapacity entity by its ID
-    void DeleteCargoCapacity(int cargoCapacityId);
+    void DeleteCargoCapacity(string cargoCapacityId);
 }
 
 // Class implementation for the ICargoCapacityDataProvider interface
@@ -34,7 +34,7 @@ public class CargoCapacityDataProvider : ICargoCapacityDataProvider
     }
     
     // Retrieves a CargoCapacity entity by its ID
-    public CargoCapacity GetCargoCapacityById(int cargoCapacityId)
+    public CargoCapacity GetCargoCapacityById(string cargoCapacityId)
     {
         return _context.CargoCapacities.FirstOrDefault(t => t.Id.Equals(cargoCapacityId));
     }
@@ -68,7 +68,7 @@ public class CargoCapacityDataProvider : ICargoCapacityDataProvider
     }
     
     // Updates an existing CargoCapacity entity's properties in the database
-    public void DeleteCargoCapacity(int cargoCapacityId)
+    public void DeleteCargoCapacity(string cargoCapacityId)
     {
         CargoCapacity cargoCapacityToDelete = _context.CargoCapacities.FirstOrDefault(t => t.Id.Equals(cargoCapacityId));
         if (cargoCapacityToDelete != null) _context.CargoCapacities.Remove(cargoCapacityToDelete);

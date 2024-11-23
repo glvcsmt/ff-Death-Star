@@ -6,7 +6,7 @@ namespace RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 public interface ICrewDataProvider
 {
     // Retrieves a Crew entity by its ID
-    Crew GetCrewById(int crewId);
+    Crew GetCrewById(string crewId);
     
     // Creates a new Crew entity in the database
     void CreateCrew(Crew crew);
@@ -18,7 +18,7 @@ public interface ICrewDataProvider
     void UpdateCrew(Crew crew);
     
     // Deletes a Crew entity by its ID
-    void DeleteCrew(int crewId);
+    void DeleteCrew(string crewId);
 }
 
 // Class implementation for the ICrewDataProvider interface
@@ -34,7 +34,7 @@ public class CrewDataProvider : ICrewDataProvider
     }
     
     // Retrieves a Crew entity by its ID
-    public Crew GetCrewById(int crewId)
+    public Crew GetCrewById(string crewId)
     {
         return _context.Crews.FirstOrDefault(t => t.Id.Equals(crewId));
     }
@@ -68,7 +68,7 @@ public class CrewDataProvider : ICrewDataProvider
     }
 
     // Deletes a Crew entity by its ID, if it exists in the database
-    public void DeleteCrew(int crewId)
+    public void DeleteCrew(string crewId)
     {
         Crew crewToDelete = _context.Crews.FirstOrDefault(t => t.Id.Equals(crewId));
         if (crewToDelete != null) _context.Crews.Remove(crewToDelete);

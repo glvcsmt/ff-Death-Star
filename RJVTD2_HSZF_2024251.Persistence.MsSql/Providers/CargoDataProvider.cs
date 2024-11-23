@@ -6,7 +6,7 @@ namespace RJVTD2_HSZF_2024251.Persistence.MsSql.Providers;
 public interface ICargoDataProvider
 {
     // Retrieves a Cargo entity by its ID
-    Cargo GetCargoById(int cargoId);
+    Cargo GetCargoById(string cargoId);
     
     // Creates a new Cargo entity in the database
     void CreateCargo(Cargo cargo);
@@ -18,7 +18,7 @@ public interface ICargoDataProvider
     void UpdateCargo(Cargo cargo);
     
     // Deletes a Cargo entity by its ID
-    void DeleteCargo(int cargoId);
+    void DeleteCargo(string cargoId);
 }
 
 // Class implementation for the ICargoDataProvider interface
@@ -34,7 +34,7 @@ public class CargoDataProvider : ICargoDataProvider
     }
     
     // Retrieves a Cargo entity by its ID
-    public Cargo GetCargoById(int cargoId)
+    public Cargo GetCargoById(string cargoId)
     {
         return _context.Cargoes.FirstOrDefault(t => t.Id.Equals(cargoId));
     }
@@ -71,7 +71,7 @@ public class CargoDataProvider : ICargoDataProvider
     }
 
     // Deletes a Cargo entity by its ID, if it exists in the database
-    public void DeleteCargo(int cargoId)
+    public void DeleteCargo(string cargoId)
     {
         Cargo cargoToDelete = _context.Cargoes.FirstOrDefault(t => t.Id.Equals(cargoId));
         if(cargoToDelete != null) _context.Cargoes.Remove(cargoToDelete);
