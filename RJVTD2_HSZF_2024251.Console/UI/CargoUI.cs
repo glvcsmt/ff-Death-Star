@@ -65,6 +65,7 @@ public class CargoUI
         string id = Commands.GetString("Enter the ID of the cargo you want to delete!\n");
         _cargoService.DeleteCargo(id);
         
+        //Deleted event
         System.Console.WriteLine($"Cargo with the ID of {id} was deleted successfully!");
     }
 }

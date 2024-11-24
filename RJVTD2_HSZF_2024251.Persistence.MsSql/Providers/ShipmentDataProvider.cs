@@ -16,7 +16,7 @@ public interface IShipmentDataProvider
     IEnumerable<Shipment> ReadAllShipments();
     
     // Updates an existing Shipment entity in the database
-    void UpdateCargo(Shipment shipment);
+    void UpdateShipment(Shipment shipment);
     
     // Deletes a Shipment entity by its ID
     void DeleteShipment(string shipmentId);
@@ -54,7 +54,7 @@ public class ShipmentDataProvider : IShipmentDataProvider
     }
 
     // Updates an existing Shipment entity's properties in the database
-    public void UpdateCargo(Shipment shipment)
+    public void UpdateShipment(Shipment shipment)
     {
         
         Shipment shipmentToUpdate = _context.Shipments.FirstOrDefault(t => t.Id == shipment.Id);
