@@ -8,12 +8,14 @@ public class ShipmentUI
     private IShipmentService _shipmentService;
     private CrewUI _crewUI;
     private CargoCapacityUI _cargoCapacityUI;
+    private IDirectoryService _directoryService;
 
-    public ShipmentUI(IShipmentService shipmentService, ICrewService crewService, ICargoCapacityService cargoCapacityService)
+    public ShipmentUI(IShipmentService shipmentService, ICrewService crewService, ICargoCapacityService cargoCapacityService, IDirectoryService directoryService)
     {
         _shipmentService = shipmentService;
         _crewUI = new CrewUI(crewService);
         _cargoCapacityUI = new CargoCapacityUI(cargoCapacityService);
+        _directoryService = directoryService;
     }
 
     public void GetShipmentById()

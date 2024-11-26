@@ -34,3 +34,5 @@ C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Ap
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Application\obj\Debug\net8.0\refint\RJVTD2_HSZF_2024251.Application.dll
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Application\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Application.pdb
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Application\obj\Debug\net8.0\ref\RJVTD2_HSZF_2024251.Application.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Application\bin\Debug\net8.0\RJVTD2_HSZF_2024251.Application.runtimeconfig.json
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Application\obj\Debug\net8.0\RJVTD2_HSZF_2024251.Application.genruntimeconfig.cache
