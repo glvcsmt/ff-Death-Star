@@ -24,7 +24,7 @@ public interface ICargoCapacityService
 
 // Implementation of the ICargoCapacityService interface
 // This service interacts with the ICargoCapacityDataProvider for data operations
-public class CargoCapacityService : ICargoCapacityDataProvider
+public class CargoCapacityService : ICargoCapacityService
 {
     private readonly ICargoCapacityDataProvider _cargoCapacityDataProvider;
 

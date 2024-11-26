@@ -12,46 +12,60 @@ public class CrewUI
         _crewService = crewService;
     }
 
-    public void GetCrewById()
+    public void GetCrewById(string id)
     {
-        string id = Commands.GetString("Enter the ID of the crew you want to get!\n");
-        Crew crewById = _crewService.GetCrewById(id);
+        string? crewId = null;
+        IEnumerable<Crew> crews = _crewService.ReadAllCrews();
+
+        foreach (Crew crew in crews)
+        {
+            if (crew.Id == id) crewId = crew.Id;
+        }
         
-        System.Console.WriteLine($"Information about the crew that has the ID: {id}:" +
+        Crew crewById = _crewService.GetCrewById(crewId);
+        
+        System.Console.WriteLine($"Information about the ship's crew:" +
                                  $"\n\t-Captain's name: {crewById.CaptainName}" +
-                                 $"\n\t-Crew count: {crewById.CrewCount}" +
-                                 $"\n\t-Shipment's ID: {crewById.ShipmentId}");
+                                 $"\n\t-Crew count: {crewById.CrewCount}");
     }
 
-    public void CreateCrew()
+    public void CreateCrew(string id)
     {
         Crew crewToCreate = new Crew();
-        crewToCreate.Id = Commands.GetString("Enter the ID of the crew you want to create!\n");
+        crewToCreate.Id = id;
         crewToCreate.CaptainName = Commands.GetString("Enter the name of the crew's captain!\n");
         crewToCreate.CrewCount = Commands.GetInt("Enter the size of the crew you want to create!\n");
-        crewToCreate.ShipmentId = Commands.GetString("Enter the ID of the shipment the crew is managing!\n");
+        crewToCreate.ShipmentId = id;
         _crewService.CreateCrew(crewToCreate);
-        
-        System.Console.WriteLine($"Crew with the ID of {crewToCreate.Id} was created successfully!");
     }
 
-    public void UpdateCrew()
+    public void UpdateCrew(string id)
     {
+        string? crewId = null;
+        IEnumerable<Crew> crews = _crewService.ReadAllCrews();
+
+        foreach (Crew crew in crews)
+        {
+            if (crew.Id == id) crewId = crew.Id;
+        }
+        
         Crew crewToUpdate = new Crew();
-        crewToUpdate.Id = Commands.GetString("Enter the ID of the crew you want to update!\n");
+        crewToUpdate.Id = crewId;
         crewToUpdate.CaptainName = Commands.GetString("Enter the name of the crew's captain!\n");
         crewToUpdate.CrewCount = Commands.GetInt("Enter the size of the crew you want to update!\n");
-        crewToUpdate.ShipmentId = Commands.GetString("Enter the ID of the shipment the crew is managing!\n");
+        crewToUpdate.ShipmentId = id;
         _crewService.UpdateCrew(crewToUpdate);
-        
-        System.Console.WriteLine($"Crew with the ID of {crewToUpdate.Id} was updated successfully!");
     }
 
-    public void DeleteCrew()
+    public void DeleteCrew(string id)
     {
-        string id = Commands.GetString("Enter the ID of the crew you want to delete!\n");
-        _crewService.DeleteCrew(id);
-        
-        System.Console.WriteLine($"Crew with the ID of {id} was deleted successfully!");
+        string? crewId = null;
+        IEnumerable<Crew> crews = _crewService.ReadAllCrews();
+
+        foreach (Crew crew in crews)
+        {
+            if (crew.Id == id) crewId = crew.Id;
+        }
+        _crewService.DeleteCrew(crewId);
     }
 }

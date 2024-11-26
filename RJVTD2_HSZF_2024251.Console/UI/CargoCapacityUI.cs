@@ -12,46 +12,61 @@ public class CargoCapacityUI
         _cargoCapacityService = cargoCapacityService;
     }
 
-    public void GetCargoCapacityById()
+    public void GetCargoCapacityById(string id)
     {
-        string id = Commands.GetString("Enter the ID of the cargo capacity you want to get!\n");
-        CargoCapacity cargoCapacityById = _cargoCapacityService.GetCargoCapacityById(id);
+        string? cargoCapacityId = null;
+        IEnumerable<CargoCapacity> cargoCapacities = _cargoCapacityService.ReadAllCargoCapacities();
         
-        System.Console.WriteLine($"Information about the cargo capacity that has the ID: {cargoCapacityById}" +
+        foreach (CargoCapacity cargoCapacity in cargoCapacities)
+        {
+            if (cargoCapacity.Id == id) cargoCapacityId = cargoCapacity.Id;
+        }
+        
+        CargoCapacity cargoCapacityById = _cargoCapacityService.GetCargoCapacityById(cargoCapacityId);
+        
+        System.Console.WriteLine($"Information about the ship's cargo capacity:" +
                                  $"\n\t-Measuring unit: {cargoCapacityById.Unit}" +
-                                 $"\n\t-Maximum capacity: {cargoCapacityById.Amount}" +
-                                 $"\n\t-Shipment's ID: {cargoCapacityById.ShipmentId}");
+                                 $"\n\t-Maximum capacity: {cargoCapacityById.Amount}");
     }
 
-    public void CreateCargoCapacity()
+    public void CreateCargoCapacity(string id)
     {
         CargoCapacity cargoCapacityToCreate = new CargoCapacity();
-        cargoCapacityToCreate.Id = Commands.GetString("Enter the ID of the cargo capacity you want to create!\n");
-        cargoCapacityToCreate.Unit = Commands.GetString("Enter the Unit in which the cargo is measured!\n");
+        cargoCapacityToCreate.Id = id;
+        cargoCapacityToCreate.Unit = Commands.GetString("Enter the Unit in which the ship's cargo is measured!\n");
         cargoCapacityToCreate.Amount = Commands.GetInt("Enter the maximum capacity!\n");
-        cargoCapacityToCreate.ShipmentId = Commands.GetString("Enter the ID of the shipment it belongs to!\n");
+        cargoCapacityToCreate.ShipmentId = id;
         _cargoCapacityService.CreateCargoCapacity(cargoCapacityToCreate);
-        
-        System.Console.WriteLine($"Cargo capacity with the ID of {cargoCapacityToCreate.Id} was created successfully!");
     }
 
-    public void UpdateCargoCapacity()
+    public void UpdateCargoCapacity(string id)
     {
+        string? cargoCapacityId = null;
+        IEnumerable<CargoCapacity> cargoCapacities = _cargoCapacityService.ReadAllCargoCapacities();
+        
+        foreach (CargoCapacity cargoCapacity in cargoCapacities)
+        {
+            if (cargoCapacity.Id == id) cargoCapacityId = cargoCapacity.Id;
+        }
+        
         CargoCapacity cargoCapacityToUpdate = new CargoCapacity();
-        cargoCapacityToUpdate.Id = Commands.GetString("Enter the ID of the cargo capacity you want to update!\n");
+        cargoCapacityToUpdate.Id = cargoCapacityId;
         cargoCapacityToUpdate.Unit = Commands.GetString("Enter the Unit in which the cargo is measured!\n");
         cargoCapacityToUpdate.Amount = Commands.GetInt("Enter the maximum capacity!\n");
-        cargoCapacityToUpdate.ShipmentId = Commands.GetString("Enter the ID of the shipment it belongs to!\n");
+        cargoCapacityToUpdate.ShipmentId = id;
         _cargoCapacityService.UpdateCargoCapacity(cargoCapacityToUpdate);
-        
-        System.Console.WriteLine($"Crew with the ID of {cargoCapacityToUpdate.Id} was updated successfully!");
     }
 
-    public void DeleteCargoCapacity()
+    public void DeleteCargoCapacity(string id)
     {
-        string id = Commands.GetString("Enter the ID of the cargo capacity you want to delete!\n");
-        _cargoCapacityService.DeleteCargoCapacity(id);
+        string? cargoCapacityId = null;
+        IEnumerable<CargoCapacity> cargoCapacities = _cargoCapacityService.ReadAllCargoCapacities();
         
-        System.Console.WriteLine($"Crew with the ID of {id} was deleted successfully!");
+        foreach (CargoCapacity cargoCapacity in cargoCapacities)
+        {
+            if (cargoCapacity.Id == id) cargoCapacityId = cargoCapacity.Id;
+        }
+        
+        _cargoCapacityService.DeleteCargoCapacity(cargoCapacityId);
     }
 }
