@@ -19,7 +19,7 @@ public class CrewUI
 
         foreach (Crew crew in crews)
         {
-            if (crew.Id == id) crewId = crew.Id;
+            if (crew.ShipmentId == id) crewId = crew.Id;
         }
         
         Crew crewById = _crewService.GetCrewById(crewId);
@@ -33,8 +33,8 @@ public class CrewUI
     {
         Crew crewToCreate = new Crew();
         crewToCreate.Id = id;
-        crewToCreate.CaptainName = Commands.GetString("Enter the name of the crew's captain!\n");
-        crewToCreate.CrewCount = Commands.GetInt("Enter the size of the crew you want to create!\n");
+        crewToCreate.CaptainName = Commands.GetString("Enter the name of the crew's captain: ");
+        crewToCreate.CrewCount = Commands.GetInt("Enter the size of the crew you want to create: ");
         crewToCreate.ShipmentId = id;
         _crewService.CreateCrew(crewToCreate);
     }
@@ -51,8 +51,8 @@ public class CrewUI
         
         Crew crewToUpdate = new Crew();
         crewToUpdate.Id = crewId;
-        crewToUpdate.CaptainName = Commands.GetString("Enter the name of the crew's captain!\n");
-        crewToUpdate.CrewCount = Commands.GetInt("Enter the size of the crew you want to update!\n");
+        crewToUpdate.CaptainName = Commands.GetString("Enter the name of the crew's captain: ");
+        crewToUpdate.CrewCount = Commands.GetInt("Enter the size of the crew you want to update: ");
         crewToUpdate.ShipmentId = id;
         _crewService.UpdateCrew(crewToUpdate);
     }

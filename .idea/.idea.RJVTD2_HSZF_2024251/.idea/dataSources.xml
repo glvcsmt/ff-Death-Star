@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Microsoft SQL Server LocalDB (JetBrains)" uuid="de696951-6697-4131-82d4-a936b0fdaffd">
-      <driver-ref>sqlserver.localdb.jb</driver-ref>
-      <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
-      <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
-      <jdbc-url>Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=deathstardb;Integrated Security=True;MultipleActiveResultSets=true</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="Microsoft SQL Server LocalDB (JetBrains) [2]" uuid="39b4efbd-2846-49ef-8e73-54193c08e810">
+    <data-source source="LOCAL" name="Microsoft SQL Server LocalDB (JetBrains)" uuid="2d3be672-ad9f-493b-a71a-09eb53ee241c">
       <driver-ref>sqlserver.localdb.jb</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>

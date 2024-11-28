@@ -54,6 +54,7 @@ namespace RJVTD2_HSZF_2024251.Console
             string selected;
             do
             {
+                
                 selected = AnsiConsole.Prompt(new SelectionPrompt<string>()
                     .Title("[yellow]Death Star Menu[/]")
                     .PageSize(10)
@@ -65,12 +66,98 @@ namespace RJVTD2_HSZF_2024251.Console
 
                 switch (selected)
                 {
-                    case "Read Data": System.Console.WriteLine("RD");
+                    case "Read Data": ReadMenu();
+                        break;
+                    case "Upload Data": UploadMenu();
+                        break;
+                    case "Update Data": UpdateMenu();
+                        break;
+                    case "Delete Data": DeleteMenu();
                         break;
                 }
             }while(selected != "Exit Application");
 
             System.Console.WriteLine("");
+        }
+
+        private static void ReadMenu()
+        {
+            string selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[yellow]Which type of data would you like to see?[/]\n")
+                    .PageSize(10)
+                    .AddChoices(new[]
+                    {
+                        "Shipment", "Cargo"
+                    }));
+
+            switch (selected)
+            {
+                case "Shipment": mainUI.ShipmentUI.GetShipmentById();
+                    break;
+                case "Cargo": mainUI.CargoUI.GetCargoById();
+                    break;
+            }
+        }
+        
+        private static void UploadMenu()
+        {
+            string selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[yellow]Which type of data would you like to update?[/]\n")
+                    .PageSize(10)
+                    .AddChoices(new[]
+                    {
+                        "Shipment", "Cargo"
+                    }));
+
+            switch (selected)
+            {
+                case "Shipment": mainUI.ShipmentUI.CreateShipment();
+                    break;
+                case "Cargo": mainUI.CargoUI.CreateCargo();
+                    break;
+            }
+        }
+        
+        private static void UpdateMenu()
+        {
+            string selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[yellow]Which type of data would you like to update?[/]\n")
+                    .PageSize(10)
+                    .AddChoices(new[]
+                    {
+                        "Shipment", "Cargo"
+                    }));
+
+            switch (selected)
+            {
+                case "Shipment": mainUI.ShipmentUI.UpdateShipment();
+                    break;
+                case "Cargo": mainUI.CargoUI.UpdateCargo();
+                    break;
+            }
+        }
+        
+        private static void DeleteMenu()
+        {
+            string selected = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[yellow]Which type of data would you like to delete?[/]\n")
+                    .PageSize(10)
+                    .AddChoices(new[]
+                    {
+                        "Shipment", "Cargo"
+                    }));
+
+            switch (selected)
+            {
+                case "Shipment": mainUI.ShipmentUI.DeleteShipment();
+                    break;
+                case "Cargo": mainUI.CargoUI.DeleteCargo();
+                    break;
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ public class ShipmentUI
 
     public void GetShipmentById()
     {
-        string id = Commands.GetString("Enter the ID of the shipment you want to get\n");
+        string id = Commands.GetString("Enter the ID of the shipment you want to get: ");
         Shipment shipmentById = _shipmentService.GetShipmentById(id);
         
         System.Console.WriteLine($"Information about the shipment that has the ID: {id}:" +
@@ -35,11 +35,11 @@ public class ShipmentUI
     public void CreateShipment()
     {
         Shipment shipmentToCreate = new Shipment();
-        shipmentToCreate.Id = Commands.GetString("Enter the ID of the shipment you want to create\n");
-        shipmentToCreate.ShipType = Commands.GetString("Enter the ship type!\n");
-        shipmentToCreate.Status = Commands.GetString("Enter the ship's status!\n");
-        shipmentToCreate.ShipmentDate = DateTime.Parse(Commands.GetString("Enter the shipping date (yyyy-mm-dd)!\n"));
-        shipmentToCreate.ImperialPermitNumber = Commands.GetString("Enter the Imperial Permit Number of the shipment!\n");
+        shipmentToCreate.Id = Commands.GetString("Enter the ID of the shipment you want to create: ");
+        shipmentToCreate.ShipType = Commands.GetString("Enter the ship type: ");
+        shipmentToCreate.Status = Commands.GetString("Enter the ship's status: ");
+        shipmentToCreate.ShipmentDate = DateTime.Parse(Commands.GetString("Enter the shipping date (yyyy-mm-dd): "));
+        shipmentToCreate.ImperialPermitNumber = Commands.GetString("Enter the Imperial Permit Number of the shipment: ");
         _shipmentService.CreateShipment(shipmentToCreate);
         
         _cargoCapacityUI.CreateCargoCapacity(shipmentToCreate.Id);
@@ -59,10 +59,10 @@ public class ShipmentUI
     public void UpdateShipment()
     {
         Shipment shipmentToUpdate = new Shipment();
-        shipmentToUpdate.Id = Commands.GetString("Enter the ID of the shipment you want to update\n");
-        shipmentToUpdate.ShipType = Commands.GetString("Enter the Ship Type!\n");
-        shipmentToUpdate.ShipmentDate = DateTime.Parse(Commands.GetString("Enter the shipping date (yyyy-mm-dd)!\n"));
-        shipmentToUpdate.ImperialPermitNumber = Commands.GetString("Enter the Imperial Permit Number of the shipment!\n");
+        shipmentToUpdate.Id = Commands.GetString("Enter the ID of the shipment you want to update: ");
+        shipmentToUpdate.ShipType = Commands.GetString("Enter the Ship Type: ");
+        shipmentToUpdate.ShipmentDate = DateTime.Parse(Commands.GetString("Enter the shipping date (yyyy-mm-dd): "));
+        shipmentToUpdate.ImperialPermitNumber = Commands.GetString("Enter the Imperial Permit Number of the shipment: ");
         _shipmentService.UpdateShipment(shipmentToUpdate);
         
         _cargoCapacityUI.UpdateCargoCapacity(shipmentToUpdate.Id);
@@ -73,7 +73,7 @@ public class ShipmentUI
 
     public void DeleteShipment()
     {
-        string id = Commands.GetString("Enter the ID of the shipment you want to delete\n");
+        string id = Commands.GetString("Enter the ID of the shipment you want to delete: ");
         _shipmentService.DeleteShipment(id);
         _cargoCapacityUI.DeleteCargoCapacity(id);
         _crewUI.DeleteCrew(id);

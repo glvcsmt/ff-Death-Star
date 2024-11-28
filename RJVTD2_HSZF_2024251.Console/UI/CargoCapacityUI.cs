@@ -19,7 +19,7 @@ public class CargoCapacityUI
         
         foreach (CargoCapacity cargoCapacity in cargoCapacities)
         {
-            if (cargoCapacity.Id == id) cargoCapacityId = cargoCapacity.Id;
+            if (cargoCapacity.ShipmentId == id) cargoCapacityId = cargoCapacity.Id;
         }
         
         CargoCapacity cargoCapacityById = _cargoCapacityService.GetCargoCapacityById(cargoCapacityId);
@@ -33,8 +33,8 @@ public class CargoCapacityUI
     {
         CargoCapacity cargoCapacityToCreate = new CargoCapacity();
         cargoCapacityToCreate.Id = id;
-        cargoCapacityToCreate.Unit = Commands.GetString("Enter the Unit in which the ship's cargo is measured!\n");
-        cargoCapacityToCreate.Amount = Commands.GetInt("Enter the maximum capacity!\n");
+        cargoCapacityToCreate.Unit = Commands.GetString("Enter the Unit in which the ship's cargo is measured: ");
+        cargoCapacityToCreate.Amount = Commands.GetInt("Enter the maximum capacity: ");
         cargoCapacityToCreate.ShipmentId = id;
         _cargoCapacityService.CreateCargoCapacity(cargoCapacityToCreate);
     }
@@ -51,8 +51,8 @@ public class CargoCapacityUI
         
         CargoCapacity cargoCapacityToUpdate = new CargoCapacity();
         cargoCapacityToUpdate.Id = cargoCapacityId;
-        cargoCapacityToUpdate.Unit = Commands.GetString("Enter the Unit in which the cargo is measured!\n");
-        cargoCapacityToUpdate.Amount = Commands.GetInt("Enter the maximum capacity!\n");
+        cargoCapacityToUpdate.Unit = Commands.GetString("Enter the Unit in which the cargo is measured: ");
+        cargoCapacityToUpdate.Amount = Commands.GetInt("Enter the maximum capacity: ");
         cargoCapacityToUpdate.ShipmentId = id;
         _cargoCapacityService.UpdateCargoCapacity(cargoCapacityToUpdate);
     }
