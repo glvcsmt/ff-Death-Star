@@ -87,7 +87,7 @@ namespace RJVTD2_HSZF_2024251.Console
                     .MoreChoicesText("[orange](Move up and down to reveal more options!)[/]")
                     .AddChoices(new[]
                     {
-                        "View Tables", "Read Data", "Upload Data", "Update Data", "Delete Data", "Generate Reports", "Exit Application"
+                        "View Tables", "Statistics", "Search by Cargo Type","Read Data", "Upload Data", "Update Data", "Delete Data", "Generate Reports", "Exit Application"
                     }));
 
                 switch (selected)
@@ -112,7 +112,15 @@ namespace RJVTD2_HSZF_2024251.Console
                         System.Console.ReadKey();
                         System.Console.Clear();
                         break;
+                    case "Statistics": StatisticsMenu();    
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
                     case "Generate Reports": GenerateReportMenu();
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
+                    case "Search by Cargo Type": SearchByCargoType();
                         System.Console.ReadKey();
                         System.Console.Clear();
                         break;
@@ -359,6 +367,152 @@ namespace RJVTD2_HSZF_2024251.Console
         #endregion
         
         #region ReportMenuMethods
+
+        private static void StatisticsMenu()
+        {
+            System.Console.Clear();
+            string selected;
+            do
+            {
+                AnsiConsole.Write(
+                    new FigletText("Death Star Menu")
+                        .LeftJustified()
+                        .Color(Color.Yellow));
+                
+                selected = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("[yellow]What kind of statistics are you interested in?[/]\n")
+                        .PageSize(10)
+                        .AddChoices(new[]
+                        {
+                            "Insured Shipments", "Captain's shipments", "Cargo capacity utilization", "Back to Main Menu"
+                        }));
+
+                switch (selected)
+                {
+                    case "Insured Shipments": DisplayInsuredShipments();
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
+                    case "Captain's shipments": DisplayCaptainShipments();
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
+                    case "Cargo capacity utilization": DisplayCapacityUtilization();
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
+                    case "Back to Main Menu":
+                        break;
+                }
+            } while (selected != "Back to Main Menu");
+        }
+        
+        private static void DisplayInsuredShipments()
+        {
+            var insuredShipments = mainUI.ShipmentUI.ReadAllShipments();
+
+            var table = new Table();
+            table.AddColumn("[yellow]Ship Type[/]");
+            table.AddColumn("[darkorange3]ID[/]");
+            table.AddColumn("[yellow]Cargo Type[/]");
+            table.AddColumn("[darkorange3]Imperial Credits[/]");
+            table.AddColumn("[yellow]Insurance[/]");
+
+            foreach (var shipment in insuredShipments)
+            {
+                var insuredCargoes = shipment.Cargoes.Where(c => c.Insurance).ToList();
+        
+                foreach (var cargo in insuredCargoes)
+                {
+                    table.AddRow(shipment.ShipType, shipment.Id, cargo.CargoType, cargo.ImperialCredits.ToString(), 
+                        cargo.Insurance.ToString());
+                }
+            }
+
+            AnsiConsole.Write(table);
+        }
+        
+        private static void DisplayCaptainShipments()
+        {
+            var shipments = mainUI.ShipmentUI.ReadAllShipments();
+
+            var table = new Table();
+            table.AddColumn("[yellow]Captain Name[/]");
+            table.AddColumn("[darkorange3]Shipment ID[/]");
+            table.AddColumn("[yellow]Ship Type[/]");
+
+            foreach (var shipment in shipments)
+            {
+                if (shipment.Crew != null && shipment.Crew.CaptainName != null)
+                {
+                    table.AddRow(shipment.Crew.CaptainName, shipment.Id, shipment.ShipType);
+                }
+            }
+
+            AnsiConsole.Write(table);
+        }
+        private static void DisplayCapacityUtilization()
+        {
+            var cargoCapacities = mainUI.CargoCapacityUI.ReadAllCargoCapacities();
+            var allShipments = mainUI.ShipmentUI.ReadAllShipments();
+
+            var table = new Table();
+            table.AddColumn("[yellow]Ship Name[/]");
+            table.AddColumn("[darkorange3]Arrival Date[/]");
+            table.AddColumn("[yellow]Total Capacity[/]");
+            table.AddColumn("[darkorange3]Used Capacity[/]");
+            table.AddColumn("[yellow]Utilization (%)[/]");
+
+            foreach (var capacity in cargoCapacities)
+            {
+                var shipment = allShipments.FirstOrDefault(s => s.Id == capacity.ShipmentId);
+
+                if (shipment != null)
+                {
+                    var totalCargoWeight = shipment.Cargoes.Sum(c => c.Quantity);
+
+                    var utilizationPercentage = (totalCargoWeight / capacity.Amount) * 100;
+
+                    table.AddRow(
+                        shipment.ShipType,
+                        shipment.ShipmentDate.Value.ToString("yyyy-MM-dd"),
+                        capacity.Amount.ToString(),
+                        totalCargoWeight.ToString(),
+                        $"{utilizationPercentage:F2}%"
+                    );
+                }
+            }
+
+            AnsiConsole.Write(table);
+        }
+        #endregion
+        
+        #region CargoSearch
+        private static void SearchByCargoType()
+        {
+            string cargoType = Commands.GetString("Enter Cargo Type: ");
+            var allCargos = mainUI.CargoUI.ReadAllCargoes();
+            var filteredCargos = allCargos.Where(c => c.CargoType == cargoType);
+
+            var table = new Table();
+            table.AddColumn("[yellow]Ship type[/]");
+            table.AddColumn("[darkorange3]Arrival date[/]");
+            table.AddColumn("[yellow]Cargo type[/]");
+            table.AddColumn("[darkorange3]Amount[/]");
+
+            foreach (var cargo in filteredCargos)
+            {
+                table.AddRow(
+                    cargo.Shipment.ShipType,
+                    cargo.Shipment.ShipmentDate.Value.ToString("yyyy-MM-dd"),
+                    cargo.CargoType,
+                    cargo.Quantity.ToString()
+                );
+            }
+
+            AnsiConsole.Write(table);
+        }
         #endregion
     }
 }
