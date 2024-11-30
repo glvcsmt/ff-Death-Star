@@ -28,6 +28,11 @@ public class CargoCapacityUI
                                  $"\n\t-Measuring unit: {cargoCapacityById.Unit}" +
                                  $"\n\t-Maximum capacity: {cargoCapacityById.Amount}");
     }
+    
+    public IEnumerable<CargoCapacity> ReadAllCargoCapacities()
+    {
+        return _cargoCapacityService.ReadAllCargoCapacities();
+    }
 
     public void CreateCargoCapacity(string id)
     {

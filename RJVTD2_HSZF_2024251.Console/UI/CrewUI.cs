@@ -28,6 +28,11 @@ public class CrewUI
                                  $"\n\t-Captain's name: {crewById.CaptainName}" +
                                  $"\n\t-Crew count: {crewById.CrewCount}");
     }
+    
+    public IEnumerable<Crew> ReadAllCrews()
+    {
+        return _crewService.ReadAllCrews();
+    }
 
     public void CreateCrew(string id)
     {

@@ -25,6 +25,11 @@ public class CargoUI
                                  $"\n\t-Risk level: {Enum.GetName(typeof(RiskLevel), cargoById.RiskLevel)}" +
                                  $"\n\t-Shipment's ID: {cargoById.ShipmentId}");
     }
+    
+    public IEnumerable<Cargo> ReadAllCargoes()
+    {
+        return _cargoService.ReadAllCargoes();
+    }
 
     public void CreateCargo()
     {

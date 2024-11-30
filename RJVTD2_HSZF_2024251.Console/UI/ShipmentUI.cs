@@ -31,6 +31,11 @@ public class ShipmentUI
         _cargoCapacityUI.GetCargoCapacityById(id);
         _crewUI.GetCrewById(id);
     }
+    
+    public IEnumerable<Shipment> ReadAllShipments()
+    {
+        return _shipmentService.ReadAllShipments();
+    }
 
     public void CreateShipment()
     {
@@ -47,13 +52,15 @@ public class ShipmentUI
         
         System.Console.WriteLine($"Shipment with the ID of {shipmentToCreate.Id} was created successfully!");
         
-        if (shipmentToCreate.ShipmentDate < DateTime.Now)
+        if (shipmentToCreate.ShipmentDate.Value.Date < DateTime.Now.Date)
         {
             string updatedStatus = shipmentToCreate.Status += ", Shipment is late!";
             shipmentToCreate.Status = updatedStatus;
             _shipmentService.UpdateShipment(shipmentToCreate);
             //Event about the status
         }
+
+        _directoryService.CreateDirectory(shipmentToCreate.ImperialPermitNumber);
     }
 
     public void UpdateShipment()
@@ -62,7 +69,6 @@ public class ShipmentUI
         shipmentToUpdate.Id = Commands.GetString("Enter the ID of the shipment you want to update: ");
         shipmentToUpdate.ShipType = Commands.GetString("Enter the Ship Type: ");
         shipmentToUpdate.ShipmentDate = DateTime.Parse(Commands.GetString("Enter the shipping date (yyyy-mm-dd): "));
-        shipmentToUpdate.ImperialPermitNumber = Commands.GetString("Enter the Imperial Permit Number of the shipment: ");
         _shipmentService.UpdateShipment(shipmentToUpdate);
         
         _cargoCapacityUI.UpdateCargoCapacity(shipmentToUpdate.Id);
@@ -79,5 +85,8 @@ public class ShipmentUI
         _crewUI.DeleteCrew(id);
         
         System.Console.WriteLine($"Shipment with the ID of {id} was deleted successfully!");
+        
+        Shipment directoryToDelete = _shipmentService.GetShipmentById(id);
+        _directoryService.DeleteDirectory(directoryToDelete.ImperialPermitNumber);
     }
 }

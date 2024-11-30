@@ -5,9 +5,15 @@ public class MainUI
     public ShipmentUI ShipmentUI { get; }
     public CargoUI CargoUI { get; }
     
-    public MainUI(ShipmentUI shipmentUI, CargoUI cargoUI)
+    public CrewUI CrewUI { get; }
+    
+    public CargoCapacityUI CargoCapacityUI { get; }
+    
+    public MainUI(ShipmentUI shipmentUI, CargoUI cargoUI, CrewUI crewUI, CargoCapacityUI cargoCapacityUI)
     {
         ShipmentUI = shipmentUI;
         CargoUI = cargoUI;
+        CrewUI = crewUI;
+        CargoCapacityUI = cargoCapacityUI;
     }
 }
