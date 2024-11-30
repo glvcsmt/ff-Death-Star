@@ -25,12 +25,14 @@ namespace RJVTD2_HSZF_2024251.Console
                     services.AddSingleton<ICrewDataProvider, CrewDataProvider>();
                     services.AddSingleton<IDirectoryProvider, DirectoryProvider>();
                     services.AddSingleton<IShipmentDataProvider ,ShipmentDataProvider>();
+                    services.AddSingleton<IXMLProvider, XMLProvider>();
                     //Services
                     services.AddSingleton<ICargoCapacityService, CargoCapacityService>();
                     services.AddSingleton<ICargoService, CargoService>();
                     services.AddSingleton<ICrewService, CrewService>();
                     services.AddSingleton<IDirectoryService, DirectoryService>();
                     services.AddSingleton<IShipmentService, ShipmentService>();
+                    services.AddSingleton<IXMLService, XMLService>();
                 })
                 .Build();
 
@@ -44,6 +46,7 @@ namespace RJVTD2_HSZF_2024251.Console
             ICrewService crewService = serviceProvider.GetRequiredService<ICrewService>();
             IDirectoryService directoryService = serviceProvider.GetRequiredService<IDirectoryService>();
             IShipmentService shipmentService = serviceProvider.GetRequiredService<IShipmentService>();
+            IXMLService xmlService = serviceProvider.GetRequiredService<IXMLService>();
             
             System.Console.Clear();
             
@@ -51,8 +54,9 @@ namespace RJVTD2_HSZF_2024251.Console
             ShipmentUI shipmentUI = new ShipmentUI(shipmentService, crewService, cargoCapacityService, directoryService);
             CrewUI crewUI = new CrewUI(crewService);
             CargoCapacityUI cargoCapacityUI = new CargoCapacityUI(cargoCapacityService);
+            XMLUI xmlUI = new XMLUI(xmlService, shipmentService);
             
-            mainUI = new MainUI(shipmentUI, cargoUI, crewUI, cargoCapacityUI);
+            mainUI = new MainUI(shipmentUI, cargoUI, crewUI, cargoCapacityUI, xmlUI);
 
             // Subscribe to events
             //Shipment events
@@ -65,6 +69,9 @@ namespace RJVTD2_HSZF_2024251.Console
             cargoUI.CargoCreated += (message) => NotifyUser(message);
             cargoUI.CargoUpdated += (message) => NotifyUser(message);
             cargoUI.CargoDeleted += (message) => NotifyUser(message);
+            
+            //XMLReport event
+            xmlUI.XMLReportCreated += (message) => NotifyUser(message);
             
             string selected;
             do
@@ -80,7 +87,7 @@ namespace RJVTD2_HSZF_2024251.Console
                     .MoreChoicesText("[orange](Move up and down to reveal more options!)[/]")
                     .AddChoices(new[]
                     {
-                        "View Tables", "Read Data", "Upload Data", "Update Data", "Delete Data", "Generate Report", "Exit Application"
+                        "View Tables", "Read Data", "Upload Data", "Update Data", "Delete Data", "Generate Reports", "Exit Application"
                     }));
 
                 switch (selected)
@@ -105,6 +112,10 @@ namespace RJVTD2_HSZF_2024251.Console
                         System.Console.ReadKey();
                         System.Console.Clear();
                         break;
+                    case "Generate Reports": GenerateReportMenu();
+                        System.Console.ReadKey();
+                        System.Console.Clear();
+                        break;
                 }
             }while(selected != "Exit Application");
             
@@ -117,7 +128,12 @@ namespace RJVTD2_HSZF_2024251.Console
         }
 
         #region MenuAccessories
-        
+
+        private static void GenerateReportMenu()
+        {
+            DisplayShipments();
+            mainUI.XMLUI.CreateXMLReport();
+        }
         private static void ReadMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -205,6 +221,9 @@ namespace RJVTD2_HSZF_2024251.Console
                     break;
             }
         }
+        #endregion
+        
+        #region TableViewMenuMethods
         
         private static void ViewTableMenu()
         {
@@ -337,7 +356,9 @@ namespace RJVTD2_HSZF_2024251.Console
 
             AnsiConsole.Write(table);
         }
+        #endregion
         
+        #region ReportMenuMethods
         #endregion
     }
 }
