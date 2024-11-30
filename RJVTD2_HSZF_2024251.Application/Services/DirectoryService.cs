@@ -15,23 +15,28 @@ public interface IDirectoryService
 
 public class DirectoryService : IDirectoryService
 {
+    private readonly IDirectoryProvider _directoryProvider;
+    public DirectoryService(IDirectoryProvider directoryProvider)
+    {
+        _directoryProvider = directoryProvider;
+    }
     public bool EnsureDirectoryExists(string directoryName)
     {
-        return new DirectoryProvider().EnsureDirectoryExists(directoryName);
+        return _directoryProvider.EnsureDirectoryExists(directoryName);
     }
 
     public bool CreateDirectory(string directoryName)
     {
-        return new DirectoryProvider().CreateDirectory(directoryName);
+        return _directoryProvider.CreateDirectory(directoryName);
     }
 
     public IEnumerable<FileSystemInfo> ReadDirectoryContent(string directoryName)
     {
-        return new DirectoryProvider().ReadDirectoryContent(directoryName);
+        return _directoryProvider.ReadDirectoryContent(directoryName);
     }
 
     public bool DeleteDirectory(string directoryName)
     {
-        return new DirectoryProvider().DeleteDirectory(directoryName);
+        return _directoryProvider.DeleteDirectory(directoryName);
     }
 }

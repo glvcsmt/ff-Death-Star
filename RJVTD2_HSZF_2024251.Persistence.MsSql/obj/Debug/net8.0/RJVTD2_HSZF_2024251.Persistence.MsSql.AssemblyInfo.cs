@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RJVTD2_HSZF_2024251.Persistence.MsSql")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e9660130c22120c96dcee9990ca05986a4d8e88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a896d26e58dfe8e04695a27a1d6ae7b88d31bd08")]
 [assembly: System.Reflection.AssemblyProductAttribute("RJVTD2_HSZF_2024251.Persistence.MsSql")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RJVTD2_HSZF_2024251.Persistence.MsSql")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
