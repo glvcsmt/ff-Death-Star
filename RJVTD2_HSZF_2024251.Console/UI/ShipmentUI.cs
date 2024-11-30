@@ -9,6 +9,11 @@ public class ShipmentUI
     private CrewUI _crewUI;
     private CargoCapacityUI _cargoCapacityUI;
     private IDirectoryService _directoryService;
+    
+    public event Action<string> ShipmentCreated;
+    public event Action<string> ShipmentUpdated;
+    public event Action<string> ShipmentDeleted;
+    public event Action<string> ShipmentLate;
 
     public ShipmentUI(IShipmentService shipmentService, ICrewService crewService, ICargoCapacityService cargoCapacityService, IDirectoryService directoryService)
     {
@@ -50,14 +55,14 @@ public class ShipmentUI
         _cargoCapacityUI.CreateCargoCapacity(shipmentToCreate.Id);
         _crewUI.CreateCrew(shipmentToCreate.Id);
         
-        System.Console.WriteLine($"Shipment with the ID of {shipmentToCreate.Id} was created successfully!");
+        ShipmentCreated?.Invoke($"Shipment with ID {shipmentToCreate.Id} has been created.");
         
         if (shipmentToCreate.ShipmentDate.Value.Date < DateTime.Now.Date)
         {
             string updatedStatus = shipmentToCreate.Status += ", Shipment is late!";
             shipmentToCreate.Status = updatedStatus;
             _shipmentService.UpdateShipment(shipmentToCreate);
-            //Event about the status
+            ShipmentLate?.Invoke($"Shipment with ID {shipmentToCreate.Id} is late, status modified!");
         }
 
         _directoryService.CreateDirectory(shipmentToCreate.ImperialPermitNumber);
@@ -74,19 +79,20 @@ public class ShipmentUI
         _cargoCapacityUI.UpdateCargoCapacity(shipmentToUpdate.Id);
         _crewUI.UpdateCrew(shipmentToUpdate.Id);
         
-        System.Console.WriteLine($"Shipment with the ID of {shipmentToUpdate.Id} was updated successfully!");
+        ShipmentUpdated?.Invoke($"Shipment with ID {shipmentToUpdate.Id} has been updated.");
     }
 
     public void DeleteShipment()
     {
         string id = Commands.GetString("Enter the ID of the shipment you want to delete: ");
+        
+        Shipment directoryToDelete = _shipmentService.GetShipmentById(id);
+        _directoryService.DeleteDirectory(directoryToDelete.ImperialPermitNumber);
+        
         _shipmentService.DeleteShipment(id);
         _cargoCapacityUI.DeleteCargoCapacity(id);
         _crewUI.DeleteCrew(id);
         
-        System.Console.WriteLine($"Shipment with the ID of {id} was deleted successfully!");
-        
-        Shipment directoryToDelete = _shipmentService.GetShipmentById(id);
-        _directoryService.DeleteDirectory(directoryToDelete.ImperialPermitNumber);
+        ShipmentDeleted?.Invoke($"Shipment with ID {id} has been deleted.");
     }
 }

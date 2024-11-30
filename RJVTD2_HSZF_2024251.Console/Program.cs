@@ -54,12 +54,24 @@ namespace RJVTD2_HSZF_2024251.Console
             
             mainUI = new MainUI(shipmentUI, cargoUI, crewUI, cargoCapacityUI);
 
+            // Subscribe to events
+            //Shipment events
+            shipmentUI.ShipmentCreated += (message) => NotifyUser(message);
+            shipmentUI.ShipmentUpdated += (message) => NotifyUser(message);
+            shipmentUI.ShipmentDeleted += (message) => NotifyUser(message);
+            shipmentUI.ShipmentLate += (message) => NotifyUser(message);
+            
+            //Cargo events
+            cargoUI.CargoCreated += (message) => NotifyUser(message);
+            cargoUI.CargoUpdated += (message) => NotifyUser(message);
+            cargoUI.CargoDeleted += (message) => NotifyUser(message);
+            
             string selected;
             do
             {
                 AnsiConsole.Write(
                     new FigletText("Death Star Menu")
-                        .Centered()
+                        .LeftJustified()
                         .Color(Color.Yellow));
                 
                 selected = AnsiConsole.Prompt(new SelectionPrompt<string>()
@@ -95,10 +107,17 @@ namespace RJVTD2_HSZF_2024251.Console
                         break;
                 }
             }while(selected != "Exit Application");
-
+            
             System.Console.WriteLine("");
         }
+        
+        private static void NotifyUser(string message)
+        {
+            AnsiConsole.MarkupLine($"[yellow]{message}[/]");
+        }
 
+        #region MenuAccessories
+        
         private static void ReadMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -195,7 +214,7 @@ namespace RJVTD2_HSZF_2024251.Console
             {
                 AnsiConsole.Write(
                     new FigletText("Death Star Menu")
-                        .Centered()
+                        .LeftJustified()
                         .Color(Color.Yellow));
                 
                 selected = AnsiConsole.Prompt(
@@ -318,6 +337,7 @@ namespace RJVTD2_HSZF_2024251.Console
 
             AnsiConsole.Write(table);
         }
-
+        
+        #endregion
     }
 }

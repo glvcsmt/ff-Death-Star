@@ -17,7 +17,7 @@ public class DirectoryProvider : IDirectoryProvider
     
     public bool EnsureDirectoryExists(string directoryName)
     {
-        return Directory.Exists(Path.Combine(_basePath, directoryName));
+        return Directory.Exists(directoryName);
     }
 
     public bool CreateDirectory(string directoryName)

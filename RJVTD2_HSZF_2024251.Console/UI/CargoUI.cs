@@ -6,6 +6,10 @@ namespace RJVTD2_HSZF_2024251.Console.UI;
 public class CargoUI
 {
     ICargoService _cargoService;
+    
+    public event Action<string> CargoCreated;
+    public event Action<string> CargoUpdated;
+    public event Action<string> CargoDeleted;
 
     public CargoUI(ICargoService cargoService)
     {
@@ -45,7 +49,7 @@ public class CargoUI
         cargoToCreate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
         _cargoService.CreateCargo(cargoToCreate);
         
-        System.Console.WriteLine($"Cargo with the ID of {cargoToCreate.Id} was created successfully!");
+        CargoCreated?.Invoke($"Cargo with ID {cargoToCreate.Id} has been created.");
     }
 
     public void UpdateCargo()
@@ -62,7 +66,7 @@ public class CargoUI
         cargoToUpdate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
         _cargoService.CreateCargo(cargoToUpdate);
         
-        System.Console.WriteLine($"Crew with the ID of {cargoToUpdate.Id} was updated successfully!");
+        CargoUpdated?.Invoke($"Cargo with ID {cargoToUpdate.Id} has been updated.");
     }
 
     public void DeleteCargo()
@@ -71,6 +75,6 @@ public class CargoUI
         _cargoService.DeleteCargo(id);
         
         //Deleted event
-        System.Console.WriteLine($"Cargo with the ID of {id} was deleted successfully!");
+        CargoDeleted?.Invoke($"Cargo with ID {id} has been deleted.");
     }
 }
