@@ -63,6 +63,19 @@
           }
         }
       },
+      "Figgle/0.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Figgle.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Figgle.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -2180,6 +2193,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Figgle": "0.5.1",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
@@ -2199,6 +2213,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Figgle": "0.5.1",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
@@ -2216,6 +2231,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Figgle": "0.5.1",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Proxies": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
@@ -2294,6 +2310,21 @@
         "lib/netstandard2.1/Castle.Core.dll",
         "lib/netstandard2.1/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "Figgle/0.5.1": {
+      "sha512": "F21k9oOGRgSb+1dCX0kFDYRBbShSMFvL49xjNmF/dsJwiN5M7zBaSWsYKpi/KZWXVIIxNzTbNTq9ZciucaHYMQ==",
+      "type": "package",
+      "path": "figgle/0.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "figgle.0.5.1.nupkg.sha512",
+        "figgle.nuspec",
+        "lib/netstandard2.0/Figgle.dll",
+        "lib/netstandard2.0/Figgle.xml",
+        "logo-square-256px.png"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -6094,6 +6125,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Figgle >= 0.5.1",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Proxies >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
@@ -6162,6 +6194,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Figgle": {
+            "target": "Package",
+            "version": "[0.5.1, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.0, )"

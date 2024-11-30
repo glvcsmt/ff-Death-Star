@@ -278,3 +278,5 @@ C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Co
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\starwars.flf
+C:\Users\USER\source\repos\Semester 3\RJVTD2_HSZF_2024251\RJVTD2_HSZF_2024251.Console\bin\Debug\net8.0\Figgle.dll

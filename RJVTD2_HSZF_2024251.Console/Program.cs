@@ -76,13 +76,18 @@ namespace RJVTD2_HSZF_2024251.Console
             string selected;
             do
             {
+                var font = FigletFont.Load("starwars.flf");
+                
                 AnsiConsole.Write(
-                    new FigletText("Death Star Menu")
+                    new FigletText(font,"Death Star Menu")
                         .LeftJustified()
                         .Color(Color.Yellow));
                 
+                var rule = new Rule();
+                AnsiConsole.Write(rule);
+                
                 selected = AnsiConsole.Prompt(new SelectionPrompt<string>()
-                    .Title("[yellow]Select an option from the menu:[/]")
+                    .Title("[yellow bold italic]Select an option from the menu:[/]")
                     .PageSize(10)
                     .MoreChoicesText("[orange](Move up and down to reveal more options!)[/]")
                     .AddChoices(new[]
@@ -93,7 +98,6 @@ namespace RJVTD2_HSZF_2024251.Console
                 switch (selected)
                 {
                     case "View Tables" : ViewTableMenu();
-                        System.Console.ReadKey();
                         System.Console.Clear();
                         break;
                     case "Read Data": ReadMenu();
@@ -132,7 +136,7 @@ namespace RJVTD2_HSZF_2024251.Console
         
         private static void NotifyUser(string message)
         {
-            AnsiConsole.MarkupLine($"[yellow]{message}[/]");
+            AnsiConsole.MarkupLine($"[bold italic slowblink yellow]{message}[/]");
         }
 
         #region MenuAccessories
@@ -146,7 +150,7 @@ namespace RJVTD2_HSZF_2024251.Console
         {
             string selected = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("[yellow]Which type of data would you like to see?[/]\n")
+                    .Title("[yellow bold italic]Which type of data would you like to see?[/]\n")
                     .PageSize(10)
                     .AddChoices(new[]
                     {
@@ -168,7 +172,7 @@ namespace RJVTD2_HSZF_2024251.Console
         {
             string selected = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("[yellow]Which type of data would you like to update?[/]\n")
+                    .Title("[yellow bold italic]Which type of data would you like to update?[/]\n")
                     .PageSize(10)
                     .AddChoices(new[]
                     {
@@ -190,7 +194,7 @@ namespace RJVTD2_HSZF_2024251.Console
         {
             string selected = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("[yellow]Which type of data would you like to update?[/]\n")
+                    .Title("[italic bold yellow]Which type of data would you like to update?[/]\n")
                     .PageSize(10)
                     .AddChoices(new[]
                     {
@@ -212,7 +216,7 @@ namespace RJVTD2_HSZF_2024251.Console
         {
             string selected = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("[yellow]Which type of data would you like to delete?[/]\n")
+                    .Title("[italic bold yellow]Which type of data would you like to delete?[/]\n")
                     .PageSize(10)
                     .AddChoices(new[]
                     {
@@ -239,18 +243,23 @@ namespace RJVTD2_HSZF_2024251.Console
             string selected;
             do
             {
+                var font = FigletFont.Load("starwars.flf");
+                
                 AnsiConsole.Write(
-                    new FigletText("Death Star Menu")
+                    new FigletText(font, "Death Star Menu")
                         .LeftJustified()
                         .Color(Color.Yellow));
+
+                var rule = new Rule();
+                AnsiConsole.Write(rule);
                 
                 selected = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                        .Title("[yellow]Which table would you like to view?[/]\n")
+                        .Title("[italic bold yellow]Which table would you like to view?[/]\n")
                         .PageSize(10)
                         .AddChoices(new[]
                         {
-                            "Shipments", "Cargos", "Crews", "Cargo Capacities", "Back to Main Menu"
+                            "Shipments", "Cargoes", "Crews", "Cargo Capacities", "Back to Main Menu"
                         }));
 
                 switch (selected)
@@ -259,7 +268,7 @@ namespace RJVTD2_HSZF_2024251.Console
                         System.Console.ReadKey();
                         System.Console.Clear();
                         break;
-                    case "Cargos": DisplayCargos();
+                    case "Cargoes": DisplayCargos();
                         System.Console.ReadKey();
                         System.Console.Clear();
                         break;
@@ -282,11 +291,12 @@ namespace RJVTD2_HSZF_2024251.Console
             var shipments = mainUI.ShipmentUI.ReadAllShipments();
 
             var table = new Table();
-            table.AddColumn("[yellow]ID[/]");
-            table.AddColumn("[darkorange3]Ship Type[/]");
-            table.AddColumn("[yellow]Shipment Date[/]");
-            table.AddColumn("[darkorange3]Status[/]");
-            table.AddColumn("[yellow]Imperial Permit Number[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]ID[/]");
+            table.AddColumn("[bold italic darkorange3]Ship Type[/]");
+            table.AddColumn("[bold italic yellow]Shipment Date[/]");
+            table.AddColumn("[bold italic darkorange3]Status[/]");
+            table.AddColumn("[bold italic yellow]Imperial Permit Number[/]");
 
             foreach (var shipment in shipments)
             {
@@ -304,13 +314,14 @@ namespace RJVTD2_HSZF_2024251.Console
             var cargos = mainUI.CargoUI.ReadAllCargoes();
 
             var table = new Table();
-            table.AddColumn("[yellow]ID[/]");
-            table.AddColumn("[darkorange3]Cargo Type[/]");
-            table.AddColumn("[yellow]Quantity[/]");
-            table.AddColumn("[darkorange3]Imperial Credits[/]");
-            table.AddColumn("[yellow]Insurance[/]");
-            table.AddColumn("[darkorange3]Risk Level[/]");
-            table.AddColumn("[yellow]Shipment ID[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]ID[/]");
+            table.AddColumn("[bold italic darkorange3]Cargo Type[/]");
+            table.AddColumn("[bold italic yellow]Quantity[/]");
+            table.AddColumn("[bold italic darkorange3]Imperial Credits[/]");
+            table.AddColumn("[bold italic yellow]Insurance[/]");
+            table.AddColumn("[bold italic darkorange3]Risk Level[/]");
+            table.AddColumn("[bold italic yellow]Shipment ID[/]");
 
             foreach (var cargo in cargos)
             {
@@ -330,10 +341,11 @@ namespace RJVTD2_HSZF_2024251.Console
             var crews = mainUI.CrewUI.ReadAllCrews();
 
             var table = new Table();
-            table.AddColumn("[yellow]ID[/]");
-            table.AddColumn("[darkorange3]Captain Name[/]");
-            table.AddColumn("[yellow]Crew Count[/]");
-            table.AddColumn("[darkorange3]Shipment ID[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]ID[/]");
+            table.AddColumn("[bold italic darkorange3]Captain Name[/]");
+            table.AddColumn("[bold italic yellow]Crew Count[/]");
+            table.AddColumn("[bold italic darkorange3]Shipment ID[/]");
 
             foreach (var crew in crews)
             {
@@ -350,10 +362,11 @@ namespace RJVTD2_HSZF_2024251.Console
             var capacities = mainUI.CargoCapacityUI.ReadAllCargoCapacities();
 
             var table = new Table();
-            table.AddColumn("[yellow]ID[/]");
-            table.AddColumn("[darkorange3]Unit[/]");
-            table.AddColumn("[yellow]Amount[/]");
-            table.AddColumn("[darkorange3]Shipment ID[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]ID[/]");
+            table.AddColumn("[bold italic darkorange3]Unit[/]");
+            table.AddColumn("[bold italic yellow]Amount[/]");
+            table.AddColumn("[bold italic darkorange3]Shipment ID[/]");
 
             foreach (var capacity in capacities)
             {
@@ -381,7 +394,7 @@ namespace RJVTD2_HSZF_2024251.Console
                 
                 selected = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                        .Title("[yellow]What kind of statistics are you interested in?[/]\n")
+                        .Title("[yellow bold italic]What kind of statistics are you interested in?[/]\n")
                         .PageSize(10)
                         .AddChoices(new[]
                         {
@@ -413,11 +426,12 @@ namespace RJVTD2_HSZF_2024251.Console
             var insuredShipments = mainUI.ShipmentUI.ReadAllShipments();
 
             var table = new Table();
-            table.AddColumn("[yellow]Ship Type[/]");
-            table.AddColumn("[darkorange3]ID[/]");
-            table.AddColumn("[yellow]Cargo Type[/]");
-            table.AddColumn("[darkorange3]Imperial Credits[/]");
-            table.AddColumn("[yellow]Insurance[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]Ship Type[/]");
+            table.AddColumn("[bold italic darkorange3]ID[/]");
+            table.AddColumn("[bold italic yellow]Cargo Type[/]");
+            table.AddColumn("[bold italic darkorange3]Imperial Credits[/]");
+            table.AddColumn("[bold italic yellow]Insurance[/]");
 
             foreach (var shipment in insuredShipments)
             {
@@ -438,9 +452,10 @@ namespace RJVTD2_HSZF_2024251.Console
             var shipments = mainUI.ShipmentUI.ReadAllShipments();
 
             var table = new Table();
-            table.AddColumn("[yellow]Captain Name[/]");
-            table.AddColumn("[darkorange3]Shipment ID[/]");
-            table.AddColumn("[yellow]Ship Type[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]Captain Name[/]");
+            table.AddColumn("[bold italic darkorange3]Shipment ID[/]");
+            table.AddColumn("[bold italic yellow]Ship Type[/]");
 
             foreach (var shipment in shipments)
             {
@@ -458,11 +473,12 @@ namespace RJVTD2_HSZF_2024251.Console
             var allShipments = mainUI.ShipmentUI.ReadAllShipments();
 
             var table = new Table();
-            table.AddColumn("[yellow]Ship Name[/]");
-            table.AddColumn("[darkorange3]Arrival Date[/]");
-            table.AddColumn("[yellow]Total Capacity[/]");
-            table.AddColumn("[darkorange3]Used Capacity[/]");
-            table.AddColumn("[yellow]Utilization (%)[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]Ship Name[/]");
+            table.AddColumn("[bold italic darkorange3]Arrival Date[/]");
+            table.AddColumn("[bold italic yellow]Total Capacity[/]");
+            table.AddColumn("[bold italic darkorange3]Used Capacity[/]");
+            table.AddColumn("[bold italic yellow]Utilization (%)[/]");
 
             foreach (var capacity in cargoCapacities)
             {
@@ -496,10 +512,11 @@ namespace RJVTD2_HSZF_2024251.Console
             var filteredCargos = allCargos.Where(c => c.CargoType == cargoType);
 
             var table = new Table();
-            table.AddColumn("[yellow]Ship type[/]");
-            table.AddColumn("[darkorange3]Arrival date[/]");
-            table.AddColumn("[yellow]Cargo type[/]");
-            table.AddColumn("[darkorange3]Amount[/]");
+            table.Border = TableBorder.Double;
+            table.AddColumn("[bold italic yellow]Ship type[/]");
+            table.AddColumn("[bold italic darkorange3]Arrival date[/]");
+            table.AddColumn("[bold italic yellow]Cargo type[/]");
+            table.AddColumn("[bold italic darkorange3]Amount[/]");
 
             foreach (var cargo in filteredCargos)
             {

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "E3uxOCosxwE=",
+  "dgSpecHash": "mblHiSebo9Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\source\\repos\\Semester 3\\RJVTD2_HSZF_2024251\\RJVTD2_HSZF_2024251.Test\\RJVTD2_HSZF_2024251.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\figgle\\0.5.1\\figgle.0.5.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
