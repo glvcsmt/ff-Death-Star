@@ -136,7 +136,7 @@ namespace RJVTD2_HSZF_2024251.Console
         
         private static void NotifyUser(string message)
         {
-            AnsiConsole.MarkupLine($"[bold italic slowblink yellow]{message}[/]");
+            AnsiConsole.MarkupLine($"[bold italic rapidblink yellow]{message}[/]");
         }
 
         #region MenuAccessories
