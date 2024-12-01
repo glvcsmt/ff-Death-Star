@@ -8,16 +8,16 @@ public interface IShipmentService
 {
     // Retrieves a Shipment entity by its ID
     Shipment GetShipmentById(string shipmentId);
-    
+
     // Creates a new Shipment entity
     void CreateShipment(Shipment shipment);
-    
+
     // Returns all Shipment entities
     IEnumerable<Shipment> ReadAllShipments();
-    
+
     // Updates an existing Shipment entity
     void UpdateShipment(Shipment shipment);
-    
+
     // Deletes a Shipment entity by its ID
     void DeleteShipment(string shipmentId);
 }
@@ -31,7 +31,7 @@ public class ShipmentService : IShipmentService
     // Constructor accepting an IShipmentDataProvider instance for dependency injection
     public ShipmentService(IShipmentDataProvider shipmentDataProvider)
     {
-        this._shipmentDataProvider = shipmentDataProvider;
+        _shipmentDataProvider = shipmentDataProvider;
     }
 
     // Retrieves a Shipment entity by its ID
@@ -51,7 +51,7 @@ public class ShipmentService : IShipmentService
     {
         return _shipmentDataProvider.ReadAllShipments();
     }
-    
+
     // Updates an existing Shipment entity
     public void UpdateShipment(Shipment shipment)
     {

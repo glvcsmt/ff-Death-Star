@@ -8,16 +8,16 @@ public interface ICrewService
 {
     // Retrieves a Crew entity by its ID
     Crew GetCrewById(string crewId);
-    
+
     // Creates a new Crew entity
     void CreateCrew(Crew crew);
-    
+
     // Returns all Crew entities
     IEnumerable<Crew> ReadAllCrews();
-    
+
     // Updates an existing Crew entity
     void UpdateCrew(Crew crew);
-    
+
     // Deletes a Crew entity by its ID
     void DeleteCrew(string crewId);
 }
@@ -51,7 +51,7 @@ public class CrewService : ICrewService
     {
         return _crewDataProvider.ReadAllCrews();
     }
-    
+
     // Updates an existing Crew entity
     public void UpdateCrew(Crew crew)
     {

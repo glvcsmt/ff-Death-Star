@@ -18,63 +18,99 @@ public class CargoUI
 
     public void GetCargoById()
     {
-        string id = Commands.GetString("Enter the ID of the cargo you want to get: ");
-        Cargo cargoById = _cargoService.GetCargoById(id);
+        try
+        {
+            string id = Commands.GetString("Enter the ID of the cargo you want to get: ");
+            Cargo cargoById = _cargoService.GetCargoById(id);
         
-        System.Console.WriteLine($"Information about the cargo that has the ID: {cargoById.Id}" +
-                                 $"\n\t-Cargo type: {cargoById.CargoType}" +
-                                 $"\n\t-Quantity: {cargoById.Quantity}" +
-                                 $"\n\t-Value in Imperial Credits: {cargoById.ImperialCredits}" +
-                                 $"\n\t-Insured? {cargoById.Insurance}" +
-                                 $"\n\t-Risk level: {Enum.GetName(typeof(RiskLevel), cargoById.RiskLevel)}" +
-                                 $"\n\t-Shipment's ID: {cargoById.ShipmentId}");
+            System.Console.WriteLine($"Information about the cargo that has the ID: {cargoById.Id}" +
+                                     $"\n\t-Cargo type: {cargoById.CargoType}" +
+                                     $"\n\t-Quantity: {cargoById.Quantity}" +
+                                     $"\n\t-Value in Imperial Credits: {cargoById.ImperialCredits}" +
+                                     $"\n\t-Insured? {cargoById.Insurance}" +
+                                     $"\n\t-Risk level: {Enum.GetName(typeof(RiskLevel), cargoById.RiskLevel)}" +
+                                     $"\n\t-Shipment's ID: {cargoById.ShipmentId}");
+        }
+        catch (Exception ex)
+        {
+            System.Console.WriteLine($"Error: {ex.Message}");
+        }
     }
     
     public IEnumerable<Cargo> ReadAllCargoes()
     {
-        return _cargoService.ReadAllCargoes();
+        try
+        {
+            return _cargoService.ReadAllCargoes();
+        }
+        catch (Exception ex)
+        {
+            System.Console.WriteLine($"Error: {ex.Message}");
+        }
+        return null;
     }
 
     public void CreateCargo()
     {
-        Cargo cargoToCreate = new Cargo();
-        cargoToCreate.Id = Commands.GetString("Enter the ID of the cargo you want to create: ");
-        cargoToCreate.CargoType = Commands.GetString("Enter the cargo type you want to create: ");
-        cargoToCreate.Quantity = Commands.GetInt("Enter the quantity of the cargo: ");
-        cargoToCreate.ImperialCredits = Commands.GetInt("Enter the value of the cargo in imperial credits: ");
-        cargoToCreate.Insurance = bool.Parse(Commands.GetString("Is the cargo insured? (true/false): "));
-        cargoToCreate.RiskLevel = (RiskLevel)Enum.Parse(typeof(RiskLevel), 
-            Commands.GetString("Enter the number of the risk level!" +
-                               "\n(0 = Low, 1 = Medium, 2 = High, 3 = Critical): "));
-        cargoToCreate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
-        _cargoService.CreateCargo(cargoToCreate);
+        try
+        {
+            Cargo cargoToCreate = new Cargo();
+            cargoToCreate.Id = Commands.GetString("Enter the ID of the cargo you want to create: ");
+            cargoToCreate.CargoType = Commands.GetString("Enter the cargo type you want to create: ");
+            cargoToCreate.Quantity = Commands.GetInt("Enter the quantity of the cargo: ");
+            cargoToCreate.ImperialCredits = Commands.GetInt("Enter the value of the cargo in imperial credits: ");
+            cargoToCreate.Insurance = bool.Parse(Commands.GetString("Is the cargo insured? (true/false): "));
+            cargoToCreate.RiskLevel = (RiskLevel)Enum.Parse(typeof(RiskLevel), 
+                Commands.GetString("Enter the number of the risk level!" +
+                                   "\n(0 = Low, 1 = Medium, 2 = High, 3 = Critical): "));
+            cargoToCreate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
+            _cargoService.CreateCargo(cargoToCreate);
         
-        CargoCreated?.Invoke($"Cargo with ID {cargoToCreate.Id} has been created.");
+            CargoCreated?.Invoke($"Cargo with ID {cargoToCreate.Id} has been created.");
+        }
+        catch (Exception ex)
+        {
+            System.Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     public void UpdateCargo()
     {
-        Cargo cargoToUpdate = new Cargo();
-        cargoToUpdate.Id = Commands.GetString("Enter the ID of the crew you want to update: ");
-        cargoToUpdate.CargoType = Commands.GetString("Enter the cargo type you want to update: ");
-        cargoToUpdate.Quantity = Commands.GetInt("Enter the quantity of the cargo: ");
-        cargoToUpdate.ImperialCredits = Commands.GetInt("Enter the value of the cargo in imperial credits: ");
-        cargoToUpdate.Insurance = bool.Parse(Commands.GetString("Is the cargo insured? (true/false): "));
-        cargoToUpdate.RiskLevel = (RiskLevel)Enum.Parse(typeof(RiskLevel), 
-            Commands.GetString("Enter the number of the risk level!" +
-                               "\n(0 = Low, 1 = Medium, 2 = High, 3 = Critical): "));
-        cargoToUpdate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
-        _cargoService.CreateCargo(cargoToUpdate);
+        try
+        {
+            Cargo cargoToUpdate = new Cargo();
+            cargoToUpdate.Id = Commands.GetString("Enter the ID of the crew you want to update: ");
+            cargoToUpdate.CargoType = Commands.GetString("Enter the cargo type you want to update: ");
+            cargoToUpdate.Quantity = Commands.GetInt("Enter the quantity of the cargo: ");
+            cargoToUpdate.ImperialCredits = Commands.GetInt("Enter the value of the cargo in imperial credits: ");
+            cargoToUpdate.Insurance = bool.Parse(Commands.GetString("Is the cargo insured? (true/false): "));
+            cargoToUpdate.RiskLevel = (RiskLevel)Enum.Parse(typeof(RiskLevel), 
+                Commands.GetString("Enter the number of the risk level!" +
+                                   "\n(0 = Low, 1 = Medium, 2 = High, 3 = Critical): "));
+            cargoToUpdate.ShipmentId = Commands.GetString("Enter the ID of the shipment the cargo belongs to: ");
+            _cargoService.CreateCargo(cargoToUpdate);
         
-        CargoUpdated?.Invoke($"Cargo with ID {cargoToUpdate.Id} has been updated.");
+            CargoUpdated?.Invoke($"Cargo with ID {cargoToUpdate.Id} has been updated.");
+        }
+        catch (Exception ex)
+        {
+            System.Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 
     public void DeleteCargo()
     {
-        string id = Commands.GetString("Enter the ID of the cargo you want to delete: ");
-        _cargoService.DeleteCargo(id);
+        try
+        {
+            string id = Commands.GetString("Enter the ID of the cargo you want to delete: ");
+            _cargoService.DeleteCargo(id);
         
-        //Deleted event
-        CargoDeleted?.Invoke($"Cargo with ID {id} has been deleted.");
+            //Deleted event
+            CargoDeleted?.Invoke($"Cargo with ID {id} has been deleted.");
+        }
+        catch (Exception ex)
+        {
+            System.Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 }

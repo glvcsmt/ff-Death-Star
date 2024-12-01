@@ -8,16 +8,16 @@ public interface ICargoService
 {
     // Retrieves a Cargo by its ID
     Cargo GetCargoById(string cargoId);
-    
+
     // Creates a new Cargo
     void CreateCargo(Cargo cargo);
-    
+
     // Returns all Cargo entities
     IEnumerable<Cargo> ReadAllCargoes();
-    
+
     // Updates an existing Cargo
     void UpdateCargo(Cargo cargo);
-    
+
     // Deletes a Cargo by its ID
     void DeleteCargo(string cargoId);
 }
@@ -31,15 +31,15 @@ public class CargoService : ICargoService
     // Constructor accepting an ICargoDataProvider instance for dependency injection
     public CargoService(ICargoDataProvider cargoDataProvider)
     {
-        this._cargoDataProvider = cargoDataProvider;
+        _cargoDataProvider = cargoDataProvider;
     }
-    
+
     // Retrieves a Cargo by its ID
     public Cargo GetCargoById(string cargoId)
     {
         return _cargoDataProvider.GetCargoById(cargoId);
     }
-    
+
     // Creates a new Cargo
     public void CreateCargo(Cargo cargo)
     {

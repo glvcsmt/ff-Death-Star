@@ -8,16 +8,16 @@ public interface ICargoCapacityService
 {
     // Retrieves a CargoCapacity by its ID
     CargoCapacity GetCargoCapacityById(string cargoCapacityId);
-    
+
     // Creates a new CargoCapacity
     void CreateCargoCapacity(CargoCapacity cargoCapacity);
-    
+
     // Returns all CargoCapacities
     IEnumerable<CargoCapacity> ReadAllCargoCapacities();
-    
+
     // Updates an existing CargoCapacity
     void UpdateCargoCapacity(CargoCapacity cargoCapacity);
-    
+
     // Deletes a CargoCapacity by its ID
     void DeleteCargoCapacity(string cargoCapacityId);
 }
@@ -31,9 +31,9 @@ public class CargoCapacityService : ICargoCapacityService
     // Constructor accepting an ICargoCapacityDataProvider instance for dependency injection
     public CargoCapacityService(ICargoCapacityDataProvider cargoCapacityDataProvider)
     {
-        this._cargoCapacityDataProvider = cargoCapacityDataProvider;
+        _cargoCapacityDataProvider = cargoCapacityDataProvider;
     }
-    
+
     // Retrieves a CargoCapacity by its ID
     public CargoCapacity GetCargoCapacityById(string cargoCapacityId)
     {
