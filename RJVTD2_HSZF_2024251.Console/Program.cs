@@ -11,12 +11,15 @@ namespace RJVTD2_HSZF_2024251.Console
 {
     internal class Program
     {
+        // A reference to the main UI component that consolidates different UI elements
         public static MainUI mainUI;
         static void Main(string[] args)
         {
+            // Set up the host and configure services
             var deathStarHost = Host.CreateDefaultBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
+                    //Register the context and providers for different data sources
                     //Context
                     services.AddScoped<DeathStarDbContext>();
                     //Providers
@@ -26,7 +29,8 @@ namespace RJVTD2_HSZF_2024251.Console
                     services.AddSingleton<IDirectoryProvider, DirectoryProvider>();
                     services.AddSingleton<IShipmentDataProvider ,ShipmentDataProvider>();
                     services.AddSingleton<IXMLProvider, XMLProvider>();
-                    //Services
+                    
+                    // Register services that handle business logic
                     services.AddSingleton<ICargoCapacityService, CargoCapacityService>();
                     services.AddSingleton<ICargoService, CargoService>();
                     services.AddSingleton<ICrewService, CrewService>();
@@ -34,13 +38,16 @@ namespace RJVTD2_HSZF_2024251.Console
                     services.AddSingleton<IShipmentService, ShipmentService>();
                     services.AddSingleton<IXMLService, XMLService>();
                 })
-                .Build();
+                .Build(); // Build the host
 
+            // Start the host to initialize services
             deathStarHost.Start();
             
+            // Create a scope to retrieve services from the DI container
             IServiceScope serviceScope = deathStarHost.Services.CreateScope();
             IServiceProvider serviceProvider = serviceScope.ServiceProvider;
 
+            // Retrieve services for UI components and functionality
             ICargoCapacityService cargoCapacityService = serviceProvider.GetRequiredService<ICargoCapacityService>();
             ICargoService cargoService = serviceProvider.GetRequiredService<ICargoService>();
             ICrewService crewService = serviceProvider.GetRequiredService<ICrewService>();
@@ -50,6 +57,7 @@ namespace RJVTD2_HSZF_2024251.Console
             
             System.Console.Clear();
             
+            // Initialize the UI components for different sections
             CargoUI cargoUI = new CargoUI(cargoService);
             ShipmentUI shipmentUI = new ShipmentUI(shipmentService, crewService, cargoCapacityService, directoryService);
             CrewUI crewUI = new CrewUI(crewService);
@@ -58,7 +66,7 @@ namespace RJVTD2_HSZF_2024251.Console
             
             mainUI = new MainUI(shipmentUI, cargoUI, crewUI, cargoCapacityUI, xmlUI);
 
-            // Subscribe to events
+            //Subscribe to events
             //Shipment events
             shipmentUI.ShipmentCreated += (message) => NotifyUser(message);
             shipmentUI.ShipmentUpdated += (message) => NotifyUser(message);
@@ -74,10 +82,12 @@ namespace RJVTD2_HSZF_2024251.Console
             xmlUI.XMLReportCreated += (message) => NotifyUser(message);
             
             string selected;
+            // Main loop to display the menu until the user chooses to exit
             do
             {
                 var font = FigletFont.Load("starwars.flf");
                 
+                // Display the title in a stylized font
                 AnsiConsole.Write(
                     new FigletText(font,"Death Star Menu")
                         .LeftJustified()
@@ -86,6 +96,7 @@ namespace RJVTD2_HSZF_2024251.Console
                 var rule = new Rule();
                 AnsiConsole.Write(rule);
                 
+                // Prompt the user to select an option from the menu
                 selected = AnsiConsole.Prompt(new SelectionPrompt<string>()
                     .Title("[yellow bold italic]Select an option from the menu:[/]")
                     .PageSize(10)
@@ -95,6 +106,7 @@ namespace RJVTD2_HSZF_2024251.Console
                         "View Tables", "Statistics", "Search by Cargo Type","Read Data", "Upload Data", "Update Data", "Delete Data", "Generate Reports", "Exit Application"
                     }));
 
+                // Handle the selected option
                 switch (selected)
                 {
                     case "View Tables" : ViewTableMenu();
@@ -129,11 +141,12 @@ namespace RJVTD2_HSZF_2024251.Console
                         System.Console.Clear();
                         break;
                 }
-            }while(selected != "Exit Application");
+            }while(selected != "Exit Application"); // Exit loop condition
             
             System.Console.WriteLine("");
         }
         
+        // Helper method to notify the user of messages through Spectre.Console
         private static void NotifyUser(string message)
         {
             AnsiConsole.MarkupLine($"[bold italic rapidblink yellow]{message}[/]");
@@ -141,11 +154,14 @@ namespace RJVTD2_HSZF_2024251.Console
 
         #region MenuAccessories
 
+        // Menu options for generating a report
         private static void GenerateReportMenu()
         {
             DisplayShipments();
             mainUI.XMLUI.CreateXMLReport();
         }
+        
+        // Menu options for reading data
         private static void ReadMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -168,6 +184,7 @@ namespace RJVTD2_HSZF_2024251.Console
             }
         }
         
+        // Menu options for uploading data
         private static void UploadMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -190,6 +207,7 @@ namespace RJVTD2_HSZF_2024251.Console
             }
         }
         
+        // Menu options for updating data
         private static void UpdateMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -212,6 +230,7 @@ namespace RJVTD2_HSZF_2024251.Console
             }
         }
         
+        // Menu options for deleting data
         private static void DeleteMenu()
         {
             string selected = AnsiConsole.Prompt(
@@ -237,6 +256,7 @@ namespace RJVTD2_HSZF_2024251.Console
         
         #region TableViewMenuMethods
         
+        // Menu for viewing different data tables
         private static void ViewTableMenu()
         {
             System.Console.Clear();
@@ -245,6 +265,7 @@ namespace RJVTD2_HSZF_2024251.Console
             {
                 var font = FigletFont.Load("starwars.flf");
                 
+                // Display menu title
                 AnsiConsole.Write(
                     new FigletText(font, "Death Star Menu")
                         .LeftJustified()
@@ -253,6 +274,7 @@ namespace RJVTD2_HSZF_2024251.Console
                 var rule = new Rule();
                 AnsiConsole.Write(rule);
                 
+                // Prompt the user to select a table to view
                 selected = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title("[italic bold yellow]Which table would you like to view?[/]\n")
@@ -262,6 +284,7 @@ namespace RJVTD2_HSZF_2024251.Console
                             "Shipments", "Cargoes", "Crews", "Cargo Capacities", "Back to Main Menu"
                         }));
 
+                // Handle the user's choice to view different tables
                 switch (selected)
                 {
                     case "Shipments": DisplayShipments();
@@ -286,6 +309,7 @@ namespace RJVTD2_HSZF_2024251.Console
             } while (selected != "Back to Main Menu");
         }
         
+        // Display a list of shipments
         private static void DisplayShipments()
         {
             var shipments = mainUI.ShipmentUI.ReadAllShipments();
@@ -309,6 +333,7 @@ namespace RJVTD2_HSZF_2024251.Console
             AnsiConsole.Write(table);
         }
         
+        // Display a list of cargoes
         private static void DisplayCargos()
         {
             var cargos = mainUI.CargoUI.ReadAllCargoes();
@@ -336,6 +361,7 @@ namespace RJVTD2_HSZF_2024251.Console
             AnsiConsole.Write(table);
         }
         
+        // Display a list of crew members
         private static void DisplayCrews()
         {
             var crews = mainUI.CrewUI.ReadAllCrews();
@@ -357,6 +383,7 @@ namespace RJVTD2_HSZF_2024251.Console
             AnsiConsole.Write(table);
         }
         
+        // Display a list of the cargo capacities
         private static void DisplayCargoCapacities()
         {
             var capacities = mainUI.CargoCapacityUI.ReadAllCargoCapacities();
@@ -381,17 +408,20 @@ namespace RJVTD2_HSZF_2024251.Console
         
         #region ReportMenuMethods
 
+        // Menu method to display various statistics options
         private static void StatisticsMenu()
         {
             System.Console.Clear();
             string selected;
             do
             {
+                // Displaying a stylized menu title using the Figlet font
                 AnsiConsole.Write(
                     new FigletText("Death Star Menu")
                         .LeftJustified()
                         .Color(Color.Yellow));
                 
+                // Prompt user to select the type of statistics to view
                 selected = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title("[yellow bold italic]What kind of statistics are you interested in?[/]\n")
@@ -401,6 +431,7 @@ namespace RJVTD2_HSZF_2024251.Console
                             "Insured Shipments", "Captain's shipments", "Cargo capacity utilization", "Back to Main Menu"
                         }));
 
+                // Handle user selection
                 switch (selected)
                 {
                     case "Insured Shipments": DisplayInsuredShipments();
@@ -421,10 +452,12 @@ namespace RJVTD2_HSZF_2024251.Console
             } while (selected != "Back to Main Menu");
         }
         
+        // Method to display shipments that are insured
         private static void DisplayInsuredShipments()
         {
             var insuredShipments = mainUI.ShipmentUI.ReadAllShipments();
 
+            // Create a table to display the data
             var table = new Table();
             table.Border = TableBorder.Double;
             table.AddColumn("[bold italic yellow]Ship Type[/]");
@@ -433,6 +466,7 @@ namespace RJVTD2_HSZF_2024251.Console
             table.AddColumn("[bold italic darkorange3]Imperial Credits[/]");
             table.AddColumn("[bold italic yellow]Insurance[/]");
 
+            // Iterate through the shipments and add rows for insured cargo
             foreach (var shipment in insuredShipments)
             {
                 var insuredCargoes = shipment.Cargoes.Where(c => c.Insurance).ToList();
@@ -444,19 +478,23 @@ namespace RJVTD2_HSZF_2024251.Console
                 }
             }
 
+            // Display the table
             AnsiConsole.Write(table);
         }
         
+        // Method to display shipments with captain information
         private static void DisplayCaptainShipments()
         {
             var shipments = mainUI.ShipmentUI.ReadAllShipments();
 
+            // Create a table to display the data
             var table = new Table();
             table.Border = TableBorder.Double;
             table.AddColumn("[bold italic yellow]Captain Name[/]");
             table.AddColumn("[bold italic darkorange3]Shipment ID[/]");
             table.AddColumn("[bold italic yellow]Ship Type[/]");
 
+            // Iterate through the shipments and add rows with captain information
             foreach (var shipment in shipments)
             {
                 if (shipment.Crew != null && shipment.Crew.CaptainName != null)
@@ -464,14 +502,18 @@ namespace RJVTD2_HSZF_2024251.Console
                     table.AddRow(shipment.Crew.CaptainName, shipment.Id, shipment.ShipType);
                 }
             }
-
+            
+            // Display the table
             AnsiConsole.Write(table);
         }
+        
+        // Method to display cargo capacity utilization data
         private static void DisplayCapacityUtilization()
         {
             var cargoCapacities = mainUI.CargoCapacityUI.ReadAllCargoCapacities();
             var allShipments = mainUI.ShipmentUI.ReadAllShipments();
 
+            // Create a table to display the data
             var table = new Table();
             table.Border = TableBorder.Double;
             table.AddColumn("[bold italic yellow]Ship Name[/]");
@@ -480,6 +522,7 @@ namespace RJVTD2_HSZF_2024251.Console
             table.AddColumn("[bold italic darkorange3]Used Capacity[/]");
             table.AddColumn("[bold italic yellow]Utilization (%)[/]");
 
+            // Iterate through the cargo capacities and calculate utilization for each ship
             foreach (var capacity in cargoCapacities)
             {
                 var shipment = allShipments.FirstOrDefault(s => s.Id == capacity.ShipmentId);
@@ -500,17 +543,24 @@ namespace RJVTD2_HSZF_2024251.Console
                 }
             }
 
+            // Display the table
             AnsiConsole.Write(table);
         }
         #endregion
         
         #region CargoSearch
+        
+        // Method to search for cargo by its type
         private static void SearchByCargoType()
         {
+            // Prompt user for the cargo type to search
             string cargoType = Commands.GetString("Enter Cargo Type: ");
+            
+            // Retrieve all cargoes and filter by the specified cargo type
             var allCargos = mainUI.CargoUI.ReadAllCargoes();
             var filteredCargos = allCargos.Where(c => c.CargoType == cargoType);
 
+            // Create a table to display the filtered cargo data
             var table = new Table();
             table.Border = TableBorder.Double;
             table.AddColumn("[bold italic yellow]Ship type[/]");
@@ -518,6 +568,7 @@ namespace RJVTD2_HSZF_2024251.Console
             table.AddColumn("[bold italic yellow]Cargo type[/]");
             table.AddColumn("[bold italic darkorange3]Amount[/]");
 
+            // Iterate through the filtered cargos and add rows to the table
             foreach (var cargo in filteredCargos)
             {
                 table.AddRow(
@@ -528,6 +579,7 @@ namespace RJVTD2_HSZF_2024251.Console
                 );
             }
 
+            // Display the table
             AnsiConsole.Write(table);
         }
         #endregion

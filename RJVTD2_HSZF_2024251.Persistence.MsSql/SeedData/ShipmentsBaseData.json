@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "ShipType": "X-wing Starfighter (Red Five)",
     "ShipmentDate": "1977-05-25",
@@ -20,7 +20,6 @@
         "RiskLevel": "Low",
         "Quantity": 1
       },
-
       {
         "CargoType": "Lightsaber (Luke’s Blue Lightsaber)",
         "ImperialCredits": 20000,
@@ -28,7 +27,6 @@
         "RiskLevel": "Critical",
         "Quantity": 1
       },
-
       {
         "CargoType": "Rebel Alliance Flight Gear",
         "ImperialCredits": 5000,
@@ -36,7 +34,6 @@
         "RiskLevel": "Medium",
         "Quantity": 1
       },
-
       {
         "CargoType": "Mission Supplies",
         "ImperialCredits": 1500,
@@ -44,7 +41,6 @@
         "RiskLevel": "Low",
         "Quantity": 5
       },
-      
       {
         "CargoType": "Rebel Alliance Communications Equipment",
         "ImperialCredits": 3000,
@@ -52,9 +48,8 @@
         "RiskLevel": "Low",
         "Quantity": 1
       }
-    ]  
+    ]
   },
-  
   {
     "ShipType": "YT-1300 Corellian Light Fighter (Millennium Falcon)",
     "ShipmentDate": "1980-05-21",
@@ -76,7 +71,6 @@
         "RiskLevel": "High",
         "Quantity": 50
       },
-      
       {
         "CargoType": "Spice",
         "ImperialCredits": 2000,
@@ -86,7 +80,6 @@
       }
     ]
   },
-  
   {
     "ShipType": "Imperial I-class Star Destroyer",
     "ShipmentDate": "1983-05-25",
@@ -117,7 +110,6 @@
       }
     ]
   },
-  
   {
     "ShipType": "CR90 Corvette (Rebel Blockade Runner)",
     "ShipmentDate": "1999-05-19",
@@ -139,7 +131,6 @@
         "RiskLevel": "Low",
         "Quantity": 500
       },
-      
       {
         "CargoType": "Rebel Blasters",
         "ImperialCredits": 8000,
@@ -147,7 +138,6 @@
         "RiskLevel": "Medium",
         "Quantity": 200
       },
-
       {
         "CargoType": "Rations",
         "ImperialCredits": 300,
@@ -157,7 +147,6 @@
       }
     ]
   },
-  
   {
     "ShipType": "Slave I (Boba Fett’s Starship)",
     "ShipmentDate": "2002-05-16",
@@ -179,7 +168,6 @@
         "RiskLevel": "Critical",
         "Quantity": 1
       },
-      
       {
         "CargoType": "Bounty Hunter Gear",
         "ImperialCredits": 50000,
@@ -187,13 +175,402 @@
         "RiskLevel": "High",
         "Quantity": 1
       },
-
       {
         "CargoType": "Boba Fett’s Personal Equipment",
         "ImperialCredits": 10000,
         "Insurance": false,
         "RiskLevel": "Low",
         "Quantity": 1
+      }
+    ]
+  },
+  {
+    "ShipType": "TIE Fighter",
+    "ShipmentDate": "2004-11-22",
+    "CargoCapacity": {
+      "Unit": "Kilograms",
+      "Amount": 12
+    },
+    "Status": "Active Duty / Galactic Empire",
+    "ImperialPermitNumber": "TIE-1234",
+    "Crew": {
+      "CaptainName": "Darth Vader",
+      "CrewCount": 1
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Imperial Orders",
+        "ImperialCredits": 0,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 1
+      },
+      {
+        "CargoType": "Secret Imperial Plans",
+        "ImperialCredits": 1000000,
+        "Insurance": false,
+        "RiskLevel": "Critical",
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "ShipType": "Mon Calamari Star Cruiser",
+    "ShipmentDate": "2005-09-14",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 1500
+    },
+    "Status": "In Transit / Rebel Alliance",
+    "ImperialPermitNumber": "MC-0045",
+    "Crew": {
+      "CaptainName": "Admiral Ackbar",
+      "CrewCount": 200
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Proton Torpedoes",
+        "ImperialCredits": 50000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 100
+      },
+      {
+        "CargoType": "Rebel Alliance Intel",
+        "ImperialCredits": 500000,
+        "Insurance": false,
+        "RiskLevel": "High",
+        "Quantity": 20
+      }
+    ]
+  },
+  {
+    "ShipType": "Imperial Shuttle",
+    "ShipmentDate": "2006-01-03",
+    "CargoCapacity": {
+      "Unit": "Kilograms",
+      "Amount": 60
+    },
+    "Status": "Docked for Maintenance",
+    "ImperialPermitNumber": "IS-9050",
+    "Crew": {
+      "CaptainName": "Captain Needa",
+      "CrewCount": 5
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Imperial Droids",
+        "ImperialCredits": 50000,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 30
+      },
+      {
+        "CargoType": "TIE Fighter Components",
+        "ImperialCredits": 15000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "ShipType": "AT-AT Walker Transport",
+    "ShipmentDate": "2007-07-16",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 150
+    },
+    "Status": "Deploying Ground Forces",
+    "ImperialPermitNumber": "ATAT-0098",
+    "Crew": {
+      "CaptainName": "General Veers",
+      "CrewCount": 100
+    },
+    "Cargoes": [
+      {
+        "CargoType": "AT-AT Walkers",
+        "ImperialCredits": 1000000,
+        "Insurance": true,
+        "RiskLevel": "High",
+        "Quantity": 5
+      },
+      {
+        "CargoType": "Speeder Bikes",
+        "ImperialCredits": 500000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 10
+      }
+    ]
+  },
+  {
+    "ShipType": "Imperial I-class Star Destroyer",
+    "ShipmentDate": "1982-08-29",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 80000
+    },
+    "Status": "Active Duty / Galactic Empire",
+    "ImperialPermitNumber": "ISD-5103",
+    "Crew": {
+      "CaptainName": "Grand Admiral Thrawn",
+      "CrewCount": 38000
+    },
+    "Cargoes": [
+      {
+        "CargoType": "TIE Interceptors",
+        "ImperialCredits": 500000,
+        "Insurance": true,
+        "RiskLevel": "High",
+        "Quantity": 36
+      },
+      {
+        "CargoType": "Droid Army Components",
+        "ImperialCredits": 300000,
+        "Insurance": false,
+        "RiskLevel": "Critical",
+        "Quantity": 50
+      }
+    ]
+  },
+  {
+    "ShipType": "EF76 Nebulon-B Escort Frigate",
+    "ShipmentDate": "1983-05-25",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 5000
+    },
+    "Status": "In Transit",
+    "ImperialPermitNumber": "NEB-1042",
+    "Crew": {
+      "CaptainName": "Captain Raymus Antilles",
+      "CrewCount": 72
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Rebel Tactical Equipment",
+        "ImperialCredits": 25000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 50
+      },
+      {
+        "CargoType": "Medical Supplies",
+        "ImperialCredits": 2000,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 300
+      }
+    ]
+  },
+  {
+    "ShipType": "Death Star II",
+    "ShipmentDate": "1983-10-30",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 2000000
+    },
+    "Status": "Construction / Galactic Empire",
+    "ImperialPermitNumber": "DS2-1983",
+    "Crew": {
+      "CaptainName": "Emperor Palpatine",
+      "CrewCount": 500000
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Superlaser Components",
+        "ImperialCredits": 10000000,
+        "Insurance": false,
+        "RiskLevel": "Critical",
+        "Quantity": 5
+      },
+      {
+        "CargoType": "Stormtrooper Armor",
+        "ImperialCredits": 1000000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 10000
+      }
+    ]
+  },
+  {
+    "ShipType": "Tantive IV (Rebel Blockade Runner)",
+    "ShipmentDate": "1999-05-19",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 1500
+    },
+    "Status": "Rebel Alliance Mission",
+    "ImperialPermitNumber": "TIV-7745",
+    "Crew": {
+      "CaptainName": "Princess Leia Organa",
+      "CrewCount": 60
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Rebel Intel",
+        "ImperialCredits": 500000,
+        "Insurance": false,
+        "RiskLevel": "High",
+        "Quantity": 50
+      },
+      {
+        "CargoType": "Medical Supplies",
+        "ImperialCredits": 20000,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 300
+      }
+    ]
+  },
+  {
+    "ShipType": "GR-75 Medium Transport (Rebel Fleet)",
+    "ShipmentDate": "2000-10-04",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 3000
+    },
+    "Status": "Transporting Rebel Supplies",
+    "ImperialPermitNumber": "GR75-3250",
+    "Crew": {
+      "CaptainName": "Admiral Ackbar",
+      "CrewCount": 90
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Rations and Supplies",
+        "ImperialCredits": 5000,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 500
+      },
+      {
+        "CargoType": "Explosives for Sabotage",
+        "ImperialCredits": 200000,
+        "Insurance": false,
+        "RiskLevel": "Critical",
+        "Quantity": 150
+      }
+    ]
+  },
+  {
+    "ShipType": "Jedi Starfighter",
+    "ShipmentDate": "2005-05-19",
+    "CargoCapacity": {
+      "Unit": "Kilograms",
+      "Amount": 20
+    },
+    "Status": "Active Duty / Jedi Order",
+    "ImperialPermitNumber": "JS-7654",
+    "Crew": {
+      "CaptainName": "Obi-Wan Kenobi",
+      "CrewCount": 1
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Lightsaber",
+        "ImperialCredits": 50000,
+        "Insurance": true,
+        "RiskLevel": "High",
+        "Quantity": 1
+      },
+      {
+        "CargoType": "Jedi Robes",
+        "ImperialCredits": 500,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 1
+      }
+    ]
+  },
+  {
+    "ShipType": "Lambda-class T-4a Shuttle",
+    "ShipmentDate": "1984-03-01",
+    "CargoCapacity": {
+      "Unit": "Kilograms",
+      "Amount": 100
+    },
+    "Status": "Galactic Empire Transport",
+    "ImperialPermitNumber": "LTS-3032",
+    "Crew": {
+      "CaptainName": "Captain Needa",
+      "CrewCount": 5
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Imperial Orders",
+        "ImperialCredits": 0,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 1
+      },
+      {
+        "CargoType": "Kyber Crystal Samples",
+        "ImperialCredits": 150000,
+        "Insurance": false,
+        "RiskLevel": "Critical",
+        "Quantity": 3
+      }
+    ]
+  },
+  {
+    "ShipType": "Nebulon-B Frigate",
+    "ShipmentDate": "1981-12-15",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 6000
+    },
+    "Status": "Rebel Supply Line",
+    "ImperialPermitNumber": "NBF-0030",
+    "Crew": {
+      "CaptainName": "Commander Jan Dodonna",
+      "CrewCount": 150
+    },
+    "Cargoes": [
+      {
+        "CargoType": "Ammunition",
+        "ImperialCredits": 10000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 300
+      },
+      {
+        "CargoType": "Medical Relief Kits",
+        "ImperialCredits": 1500,
+        "Insurance": true,
+        "RiskLevel": "Low",
+        "Quantity": 500
+      }
+    ]
+  },
+  {
+    "ShipType": "Star Destroyer (Chimaera)",
+    "ShipmentDate": "1999-02-01",
+    "CargoCapacity": {
+      "Unit": "Metric Tons",
+      "Amount": 80000
+    },
+    "Status": "Active Duty / Imperial Navy",
+    "ImperialPermitNumber": "ISD-5015",
+    "Crew": {
+      "CaptainName": "Grand Admiral Thrawn",
+      "CrewCount": 40000
+    },
+    "Cargoes": [
+      {
+        "CargoType": "TIE Defenders",
+        "ImperialCredits": 400000,
+        "Insurance": true,
+        "RiskLevel": "Medium",
+        "Quantity": 50
+      },
+      {
+        "CargoType": "Imperial Intelligence Data",
+        "ImperialCredits": 300000,
+        "Insurance": false,
+        "RiskLevel": "High",
+        "Quantity": 10
       }
     ]
   }
